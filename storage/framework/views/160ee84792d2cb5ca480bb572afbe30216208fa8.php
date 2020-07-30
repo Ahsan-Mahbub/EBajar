@@ -3,13 +3,13 @@
 <?php $__env->startSection('head_name', 'Slider'); ?>
 <?php $__env->startSection('content'); ?>
     <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_slider">Add new</button>
-    <form id="slider_form">
+    <form id="slider_form" enctype="multipart/form-data"><?php echo csrf_field(); ?>
         <div id="add_slider" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">ADD Slider</h5>
+                        <h5 class="modal-title">Add Slider</h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
@@ -32,11 +32,10 @@
                            	<div class="form-group">
                            		<label class="col-lg-3 control-label">Image:</label>
                            		<div class="col-lg-9">
-                                    <img id='blah' style="height:140px;" src="/image/avatar.jpg" alt="image" class='img-responsive'>
+                                    <img id='previmage' src="<?php echo e(asset('backend_assets/images/BackendImg/Slider/sliderlogo.png')); ?>" alt="image" class='img-responsive'>
 		                          <br><br>
-		                          
 		                          <input type='file' id="image" name="image" onchange="readURL(this);" />
-                                    <span class="text-danger" id="description"></span>
+                                    <span class="text-danger" id="image"></span>
                                 </div>
 		                        
 		                    </div>

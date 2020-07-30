@@ -27,7 +27,7 @@ Route::prefix('admin')->group(function(){
         Route::post('/brand/store', 'BrandController@store');
         Route::post('/brand/update', 'BrandController@update');
         Route::get('/brand/show/{id}', 'BrandController@show');
-        //Brand
+        //Slider
         Route::resource('/slider', 'SliderController');
         Route::post('/slider/store', 'SliderController@store');
         Route::post('/slider/update', 'SliderController@update');
