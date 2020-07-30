@@ -56,5 +56,19 @@
         "hideMethod": "fadeOut"
     }
 </script>
+<script type="text/javascript">
+    function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      $('#previmage')
+        .attr('src', e.target.result)
+        .width(400)
+        .height(150);
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+</script>
 <?php echo $__env->yieldContent('script'); ?>
 <?php /**PATH /home/kiri2ka/Laravel/xxx-xxx/EBajara/resources/views/Backend/layouts/js.blade.php ENDPATH**/ ?>

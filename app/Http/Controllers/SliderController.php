@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Slider;
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests\SliderRequest;
 use Illuminate\Support\Facades\Validator;
@@ -25,9 +26,12 @@ class SliderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $slider = Slider::search($request->search)->paginate(10);
+        return view('Backend.Admin.Slider.list', [
+            'slider' => $slider
+            ]);
     }
 
     /**
@@ -38,8 +42,42 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $slider = new Slider;
+
+        $validation = Validator::make($request->all(),$slider->validation());
+        if ($validation->fails())
+        {
+            $status=500;
+            $response=[
+            'status'=>$status,
+            'errors'=>$validation->errors(),
+            ];
+        }
+        else
+        {
+            if ($request->hasFile('image')) 
+            {
+                $filetype=$request->file('image')->getClientOriginalExtension();
+                $path=public_path('backend_assets/images/BackendImg/Slider/');
+                $image='Slider'.time().'.'.$filetype;
+                $request->file('image')->move($path,$image);
+            }
+
+            $input=[
+            'image'=>$image,
+            'slider_name'=>$request->slider_name,
+            'description'=>$request->description,
+            ];
+
+            Slider::create($input);
+            $status=201;
+            $response=[
+                'status'=>$status,
+                'data'=>$slider,
+            ];
+        }
+        return response()->json($response,$status);
+    } 
 
     /**
      * Display the specified resource.
@@ -81,8 +119,11 @@ class SliderController extends Controller
      * @param  \App\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $slider)
+    public function destroy($id)
     {
-        //
+        $data=Slider::find($id);
+        unlink(public_path('backend_assets/images/BackendImg/Slider/').$data['image']);
+        $slider = Slider::findOrFail($id)->delete();
+        return response()->json($slider, 202);
     }
 }
