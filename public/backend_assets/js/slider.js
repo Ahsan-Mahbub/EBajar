@@ -40,7 +40,6 @@ $(document).ready(function () {
                 $.ajax({
                     url: "/admin/slider/"+data,
                     type: "delete",
-                    data:{"_token": "{{ csrf_token() }}"},
                     dataType: "json",
                     success: function (response) {
                         datalist();
@@ -53,7 +52,24 @@ $(document).ready(function () {
         });
     });
 
-  $("#data_lists").on("click", ".page-link", function (e) {
+    $(document).on("click", "#status", function () {
+        let data = $(this).attr("data");
+        $.ajax({
+            url: "/admin/slider/show/"+data,
+            type: "get",
+            dataType: "json",
+            success: function (response) {
+                datalist();
+                if (response.status === 0) {
+                    toastr.success("slider status inactive", "Success!");
+                } else {
+                    toastr.success("slider status active", "Success!");
+                }
+            }
+        })
+    })
+
+    $("#data_lists").on("click", ".page-link", function (e) {
         e.preventDefault();
         let page_link = $(this).attr('href');
         datalist(page_link);
