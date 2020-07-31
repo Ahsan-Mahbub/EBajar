@@ -75,7 +75,7 @@ class SliderController extends Controller
                 'status'=>$status,
                 'data'=>$slider,
             ];
-        }
+        } 
         return response()->json($response,$status);
     } 
 
@@ -85,9 +85,17 @@ class SliderController extends Controller
      * @param  \App\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function show(Slider $slider)
+    public function show($id)
     {
-        //
+        $slider_status = Slider::findOrFail($id);
+        if ($slider_status->status == 1) {
+            $slider_status->update(["status" => 0]);
+            $status = 201;
+        } else {
+            $slider_status->update(["status" => 1]);
+            $status = 200;
+        }
+        return response()->json($slider_status, $status); 
     }
 
     /**
@@ -121,8 +129,6 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        $data=Slider::find($id);
-        unlink(public_path('backend_assets/images/BackendImg/Slider/').$data['image']);
         $slider = Slider::findOrFail($id)->delete();
         return response()->json($slider, 202);
     }
