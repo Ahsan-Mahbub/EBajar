@@ -1,1 +1,0 @@
-komol.js

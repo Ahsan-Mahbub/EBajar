@@ -3,7 +3,6 @@
     <tr>
         <th>#</th>
         <th>Division Name</th>
-        <th>Description</th>
         <th>Status</th>
         <th>Action</th>
     </tr>
@@ -13,7 +12,6 @@
         <tr>
             <td>{{$key+1}}</td>
             <td>{{$value->division_name}}</td>
-            <td>{{$value->description}}</td>
             <td>
                 @if ($value->status == 1)
                     <span class="text-success">Active</span>

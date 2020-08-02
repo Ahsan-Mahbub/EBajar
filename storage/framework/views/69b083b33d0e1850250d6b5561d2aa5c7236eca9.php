@@ -1,6 +1,6 @@
-<?php $__env->startSection('title', '|| Dashboard'); ?>
-<?php $__env->startSection('head', 'Dashboard'); ?>
-<?php $__env->startSection('head_name', 'Dashboard'); ?>
+<?php $__env->startSection('title', '|| Division'); ?>
+<?php $__env->startSection('head', 'Division'); ?>
+<?php $__env->startSection('head_name', 'Division'); ?>
 <?php $__env->startSection('content'); ?>
     <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_division">Add new</button>
     <form id="division_form">
@@ -51,7 +51,7 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Division Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="division_name" name="division_name" placeholder="Division Name">
+                                    <input type="text" class="form-control" id="division_name" name="division_name">
                                 </div>
                             </div>
                             <br><br>
