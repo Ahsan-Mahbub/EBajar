@@ -1,23 +1,23 @@
-@extends('Backend.layouts.main')
-@section('title', '|| Brand')
-@section('head', 'Brand')
-@section('head_name', 'Brand')
-@section('content')
-    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_brand">Add new</button>
-    <form id="brand_form" enctype="multipart/form-data">@csrf
-        <div id="add_brand" class="modal fade">
+<?php $__env->startSection('title', '|| Slider'); ?>
+<?php $__env->startSection('head', 'Slider'); ?>
+<?php $__env->startSection('head_name', 'Slider'); ?>
+<?php $__env->startSection('content'); ?>
+    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_slider">Add new</button>
+    <form id="slider_form" enctype="multipart/form-data"><?php echo csrf_field(); ?>
+        <div id="add_slider" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Add Brand</h5>
+                        <h5 class="modal-title">Add Slider</h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
+                        	<div class="form-group">
+                                <label class="col-lg-3 control-label">Slider Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="brand_name" placeholder="Brand Name">
+                                    <input type="text" class="form-control" name="slider_name" placeholder="Slider Name">
+                                    <span class="text-danger" id="slider_name"></span>
                                 </div>
                             </div>
                             <br><br>
@@ -25,9 +25,20 @@
                                 <label class="col-lg-3 control-label">Description:</label>
                                 <div class="col-lg-9">
                                     <input type="text" class="form-control" name="description" placeholder="Description">
+                                    <span class="text-danger" id="description"></span>
                                 </div>
                             </div>
                             <br><br>
+                           	<div class="form-group">
+                           		<label class="col-lg-3 control-label">Image:</label>
+                           		<div class="col-lg-9">
+                                    <img id='previmage' src="<?php echo e(asset('backend_assets/images/BackendImg/Slider/sliderlogo.png')); ?>" alt="image" class='img-responsive'>
+		                          <br><br>
+		                          <input type='file' id="image" name="image" onchange="readURL(this);" />
+                                    <span class="text-danger" id="image"></span>
+                                </div>
+		                        
+		                    </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -40,19 +51,26 @@
     </form>
     <br><br><br>
  
-    <form id="brand_update_form">
+    <form id="district_update_form">
         <div id="editModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">EDIT Brand</h5>
+                        <h5 class="modal-title">EDIT DISTRICT</h5>
                     </div>
                     <div class="panel-body">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="brand_name" name="brand_name">
+                                    <input type="hidden" class="form-control" id="district_id" name="district_id">
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Distract Name:</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="e_district_name" name="district_name" placeholder="Distract Name">
+                                    <span class="text-danger" id="u_district_name"></span>
                                 </div>
                             </div>
                             <br><br>
@@ -61,7 +79,8 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Description:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="description" name="description">
+                                    <input type="text" class="form-control" id="e_description" name="description" placeholder="Description">
+                                    <span class="text-danger" id="u_description"></span>
                                 </div>
                             </div>
                             <br><br>
@@ -102,7 +121,9 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-    <script type="text/javascript" src="{{asset('backend_assets/js/brand.js')}}"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('backend_assets/js/slider.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('Backend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jubair/Desktop/E-bazaar/E-bazzar/EBajara/resources/views/Backend/Admin/Slider/slider.blade.php ENDPATH**/ ?>

@@ -7,16 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     protected $table = "brands";
-    protected $primaryKey = "brand_id";
-    protected $fillable = ["brand_name", "status"];
+  	protected $primaryKey = "brand_id";
+  	protected $fillable = ["brand_name", "description", "status"];
 
-    public function scopeSearch($query, $search)
-    {
-        return $query->where('brand_name', 'LIKE', '%' . $search . '%');
-    }
+  	public function validation()
+  	{
+  		return [
+          'brand_name' => 'required',
+          'description' => 'required',
+      	];
+  	}
+
+
+	public function scopeSearch($query, $search)
+  	{
+      	return $query->where('sub_category_name', 'LIKE', '%' . $search . '%');
+     }
 
     public function scopeActive($query)
-    {
-        $query->where("status", 1);
-    }
+  	{
+  	  	$query->where("status", 1);
+  	}
 }

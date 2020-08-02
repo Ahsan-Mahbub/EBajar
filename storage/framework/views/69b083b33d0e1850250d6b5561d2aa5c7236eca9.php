@@ -1,30 +1,22 @@
-@extends('Backend.layouts.main')
-@section('title', '|| Brand')
-@section('head', 'Brand')
-@section('head_name', 'Brand')
-@section('content')
-    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_brand">Add new</button>
-    <form id="brand_form" enctype="multipart/form-data">@csrf
-        <div id="add_brand" class="modal fade">
+<?php $__env->startSection('title', '|| Dashboard'); ?>
+<?php $__env->startSection('head', 'Dashboard'); ?>
+<?php $__env->startSection('head_name', 'Dashboard'); ?>
+<?php $__env->startSection('content'); ?>
+    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_division">Add new</button>
+    <form id="division_form">
+        <div id="add_division" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Add Brand</h5>
+                        <h5 class="modal-title">ADD DIVISION</h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
+                                <label class="col-lg-3 control-label">Division Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="brand_name" placeholder="Brand Name">
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Description:</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="description" placeholder="Description">
+                                    <input type="text" class="form-control" name="division_name" placeholder="Division Name">
                                 </div>
                             </div>
                             <br><br>
@@ -39,33 +31,32 @@
         </div>
     </form>
     <br><br><br>
- 
-    <form id="brand_update_form">
+
+    <form id="division_update_form">
         <div id="editModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">EDIT Brand</h5>
+                        <h5 class="modal-title">EDIT DIVISION</h5>
                     </div>
-                    <div class="panel-body">
+                    <div class="modal-body">
+                        <div class="panel-body">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="brand_name" name="brand_name">
+                                    <input type="hidden" class="form-control" id="division_id" name="division_id">
                                 </div>
                             </div>
                             <br><br>
-
-
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Description:</label>
+                                <label class="col-lg-3 control-label">Division Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="description" name="description">
+                                    <input type="text" class="form-control" id="division_name" name="division_name" placeholder="Division Name">
                                 </div>
                             </div>
                             <br><br>
                         </div>
+                    </div>
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-danger" id="close2" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Update</button>
@@ -74,12 +65,12 @@
             </div>
         </div>
     </form>
-
+    
     <div class="tabbable page-tabs">
         <div class="tab-content">
             <div class="tab-pane active fade in" id="inside">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h6 class="panel-title"><i class="icon-table"></i> View All Image</h6></div>
+                    <div class="panel-heading"><h6 class="panel-title"><i class="icon-table"></i> View All Data</h6></div>
                     <div class="datatable">
                         <div id="DataTables_Table_0_filter" class="dataTables_filter">
                             <label><span>Filter:</span>
@@ -102,7 +93,8 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-    <script type="text/javascript" src="{{asset('backend_assets/js/brand.js')}}"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('backend_assets/js/division.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('Backend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jubair/Desktop/E-bazaar/E-bazzar/EBajara/resources/views/Backend/Admin/Address/Division/division.blade.php ENDPATH**/ ?>

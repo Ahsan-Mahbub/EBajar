@@ -1,10 +1,9 @@
-@extends('Backend.layouts.main')
-@section('title', '|| Brand')
-@section('head', 'Brand')
-@section('head_name', 'Brand')
-@section('content')
+<?php $__env->startSection('title', '|| Brand'); ?>
+<?php $__env->startSection('head', 'Brand'); ?>
+<?php $__env->startSection('head_name', 'Brand'); ?>
+<?php $__env->startSection('content'); ?>
     <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_brand">Add new</button>
-    <form id="brand_form" enctype="multipart/form-data">@csrf
+    <form id="brand_form" enctype="multipart/form-data"><?php echo csrf_field(); ?>
         <div id="add_brand" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -102,7 +101,9 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-    <script type="text/javascript" src="{{asset('backend_assets/js/brand.js')}}"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('backend_assets/js/brand.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('Backend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jubair/Desktop/E-bazaar/E-bazzar/EBajara/resources/views/Backend/Admin/Brand/brand.blade.php ENDPATH**/ ?>
