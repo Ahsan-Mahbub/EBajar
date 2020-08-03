@@ -26,7 +26,7 @@
                 @else
                     <button class="btn btn-primary" id="status" data="{{$value->division_id}}"> <i class="fa fa-refresh" aria-hidden="true"></i></button>
                 @endif
-                <button class="btn btn-info edit" data="{{$value->division_id}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                <button class="btn btn-info edit" data="{{$value->division_id}}" data-toggle="modal" data-target="#editModal"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
             </td>
         </tr>
     @endforeach
