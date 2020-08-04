@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Division;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use PhpParser\Node\Expr\AssignOp\Div;
 
 class DivisionController extends Controller
 {
@@ -22,9 +24,14 @@ class DivisionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $division = Division::where(function ($division) use ($request) {
+            if ($request->search) {
+                $division->where('division_name', 'LIKE', '%' . $request->search . '%');
+            }
+        })->paginate(10);
+        return view('Backend.Admin.Address.Division.list', ['division' => $division]);
     }
 
     /**
@@ -35,7 +42,23 @@ class DivisionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $division_model = new Division();
+        $validation = Validator::make($request->all(), $division_model->validation());
+        if ($validation->fails()) {
+            $status = 400;
+            $response = [
+                "status" => $status,
+                "errors" => $validation->errors(),
+            ];
+        } else {
+            $division_model->fill($request->all())->save();
+            $status = 201;
+            $response = [
+                "status" => $status,
+                "data" => $division_model,
+            ];
+        }
+        return response()->json($response, $status);
     }
 
     /**
@@ -44,9 +67,17 @@ class DivisionController extends Controller
      * @param  \App\Division  $division
      * @return \Illuminate\Http\Response
      */
-    public function show(Division $division)
+    public function show($id)
     {
-        //
+        $division_status = Division::findOrFail($id);
+        if ($division_status->status == 1) {
+            $division_status->update(["status" => 0]);
+            $status = 201;
+        } else {
+            $division_status->update(["status" => 1]);
+            $status = 200;
+        }
+        return response()->json($division_status, $status);
     }
 
     /**
@@ -55,9 +86,10 @@ class DivisionController extends Controller
      * @param  \App\Division  $division
      * @return \Illuminate\Http\Response
      */
-    public function edit(Division $division)
+    public function edit($id)
     {
-        //
+        $division_data = Division::findOrFail($id);
+        return response()->json($division_data, 201);
     }
 
     /**
@@ -67,9 +99,25 @@ class DivisionController extends Controller
      * @param  \App\Division  $division
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Division $division)
+    public function update(Request $request)
     {
-        //
+        $division_model = Division::findOrFail($request->division_id);
+        $validation = Validator::make($request->all(), $division_model->validation());
+        if ($validation->fails()) {
+            $status = 400;
+            $response = [
+                "status" => $status,
+                "errors" => $validation->errors(),
+            ];
+        } else {
+            $division_model->fill($request->all())->save();
+            $status = 201;
+            $response = [
+                "status" => $status,
+                "errors" => $validation->errors(),
+            ];
+        }
+        return response()->json($response, $status);
     }
 
     /**
@@ -78,8 +126,9 @@ class DivisionController extends Controller
      * @param  \App\Division  $division
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Division $division)
+    public function destroy($id)
     {
-        //
+        $division = Division::findOrFail($id)->delete();
+        return response()->json($division, 202);
     }
 }

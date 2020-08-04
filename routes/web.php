@@ -11,7 +11,10 @@ Route::get('/admin', 'HomeController@index');
 Route::prefix('admin')->group(function(){
     Route::middleware('auth')->group(function () {
     	//Division
-    	Route::resource('/division', 'DivisionController');
+        Route::resource('/division', 'DivisionController');
+        Route::post('/division/store', 'DivisionController@store');
+        Route::post('/division/update', 'DivisionController@update');
+        Route::get('/division/show/{id}', 'DivisionController@show');
     	//Category
     	Route::resource('/category', 'CategoryController');
         Route::post('/category/store', 'CategoryController@store');

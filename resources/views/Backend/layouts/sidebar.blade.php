@@ -3,7 +3,7 @@
 		<ul class="navigation">
 			<li class="{{ (request()->is('admin')) ? 'active' : '' }}"><a href="{{ url('/admin') }}"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
 			<li>
-				<a href="#"><span>Accunt Settings</span><i class="icon-user4"></i></a>
+				<a href="#"><span>Account Settings</span><i class="icon-user4"></i></a>
 				<ul>
 					<li><a href="form_components.html">Form components</a></li>
 					<li><a href="form_layouts.html">Form layouts</a></li>

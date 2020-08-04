@@ -3,7 +3,6 @@
     <tr>
         <th>#</th>
         <th>Division Name</th>
-        <th>Description</th>
         <th>Status</th>
         <th>Action</th>
     </tr>
@@ -13,7 +12,6 @@
         <tr>
             <td>{{$key+1}}</td>
             <td>{{$value->division_name}}</td>
-            <td>{{$value->description}}</td>
             <td>
                 @if ($value->status == 1)
                     <span class="text-success">Active</span>
@@ -28,7 +26,7 @@
                 @else
                     <button class="btn btn-primary" id="status" data="{{$value->division_id}}"> <i class="fa fa-refresh" aria-hidden="true"></i></button>
                 @endif
-                <button class="btn btn-info edit" data="{{$value->division_id}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                <button class="btn btn-info edit" data="{{$value->division_id}}" data-toggle="modal" data-target="#editModal"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
             </td>
         </tr>
     @endforeach

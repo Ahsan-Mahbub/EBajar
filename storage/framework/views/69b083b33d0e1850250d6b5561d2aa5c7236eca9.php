@@ -1,8 +1,7 @@
-@extends('Backend.layouts.main')
-@section('title', '|| Division')
-@section('head', 'Division')
-@section('head_name', 'Division')
-@section('content')
+<?php $__env->startSection('title', '|| Division'); ?>
+<?php $__env->startSection('head', 'Division'); ?>
+<?php $__env->startSection('head_name', 'Division'); ?>
+<?php $__env->startSection('content'); ?>
     <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_division">Add new</button>
     <form id="division_form">
         <div id="add_division" class="modal fade">
@@ -94,7 +93,8 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-    <script type="text/javascript" src="{{asset('backend_assets/js/division.js')}}"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('backend_assets/js/division.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('Backend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jubair/Desktop/E-bazaar/E-bazzar/EBajara/resources/views/Backend/Admin/Address/Division/division.blade.php ENDPATH**/ ?>

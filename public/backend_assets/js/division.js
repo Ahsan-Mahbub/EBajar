@@ -1,19 +1,19 @@
-$(document).ready(function(){
+$(document).ready(function () {
+ 
     datalist();
-
-    $(document).on("submit", "#brand_form", function (e) {
+    $(document).on("submit", "#division_form", function (e) {
         e.preventDefault();
         let data = $(this).serializeArray();
         $.ajax({
-            url: "/admin/brand/store",
+            url: "/admin/division/store",
             data: data,
             type: "post",
             dataType: "json",
             success: function (response) {
                 datalist();
-                toastr.success("Brand data added successfully", "Success!");
+                toastr.success("Division data added successfully", "Success!");
                 $("#close").click();
-                $("#brand_form").trigger("reset");
+                $("#division_form").trigger("reset");
             },
             error: function (error) {
                 console.log(error);
@@ -35,16 +35,16 @@ $(document).ready(function(){
         .then((willDelete) => {
             if (willDelete) {
                 $.ajax({
-                    url: "/admin/brand/"+data,
+                    url: "/admin/division/"+data,
                     type: "delete",
                     dataType: "json",
                     success: function (response) {
                         datalist();
-                        toastr.success("Brand data deleted successfully", "Success!");
+                        toastr.success("Division data deleted successfully", "Success!");
                     }
                 })
             } else {
-                swal("Your imaginary Brand data is safe!");
+                swal("Your imaginary division data is safe!");
             }
         });
     });
@@ -53,15 +53,15 @@ $(document).ready(function(){
         let data = $(this).attr("data");
 
         $.ajax({
-            url: "/admin/brand/show/"+data,
+            url: "/admin/division/show/"+data,
             type: "get",
             dataType: "json",
             success: function (response) {
                 datalist();
                 if (response.status === 0) {
-                    toastr.success("Brand status inactive", "Success!");
+                    toastr.success("Division status inactive", "Success!");
                 } else {
-                    toastr.success("Brand status active", "Success!");
+                    toastr.success("Division status active", "Success!");
                 }
             }
         })
@@ -71,39 +71,37 @@ $(document).ready(function(){
         let data = $(this).attr("data");
 
         $.ajax({
-            url: "/admin/brand/"+data+"/edit",
+            url: "/admin/division/"+data+"/edit",
             type: "get",
             dataType: "json",
             success: function (response) {
-                $("#brand_name").val(response.brand_name);
-                $("#description").val(response.description);
-                $("#brand_id").val(response.brand_id);
+                $("#division_name").val(response.division_name);
+                $("#division_id").val(response.division_id);
             }
         })
     })
 
-    $(document).on("submit", "#brand_update_form", function (e) {
+    $(document).on("submit", "#division_update_form", function (e) {
         e.preventDefault();
-        let id = $(this).attr("#brand_id");
+        let id = $(this).attr("#division_id");
         let data = $(this).serializeArray();
         console.log(id);
         $.ajax({
-            url: "/admin/brand/update",
+            url: "/admin/division/update",
             data: data,
             type: "post",
             dataType: "json",
             success: function (response) {
                 datalist();
-                toastr.success("Brand data updated successfully", "Success!");
+                toastr.success("Division data updated successfully", "Success!");
                 $("#close2").click();
-                $("#brand_update_form").trigger("reset");
+                $("#division_update_form").trigger("reset");
             },
             error: function (error) {
                 console.log(error);
             }
         })
     });
-
 
     $("#data_lists").on("click", ".page-link", function(e) {
         e.preventDefault();
@@ -115,7 +113,7 @@ $(document).ready(function(){
         datalist();
     });
 
-    function datalist(page_link="/admin/brand/create") {
+    function datalist(page_link="/admin/division/create") {
         let search = $(".search").val();
 
         $.ajax({
@@ -128,4 +126,5 @@ $(document).ready(function(){
             }
         })
     }
+
 })

@@ -1,23 +1,22 @@
-@extends('Backend.layouts.main')
-@section('title', '|| Division')
-@section('head', 'Division')
-@section('head_name', 'Division')
-@section('content')
-    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_division">Add new</button>
-    <form id="division_form">
-        <div id="add_division" class="modal fade">
+<?php $__env->startSection('title', '|| Category'); ?>
+<?php $__env->startSection('head', 'Category'); ?>
+<?php $__env->startSection('head_name', 'Category'); ?>
+<?php $__env->startSection('content'); ?>
+    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_category">Add new</button>
+    <form id="category_form">
+        <div id="add_category" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">ADD DIVISION</h5>
+                        <h5 class="modal-title">Add Category</h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Division Name:</label>
+                                <label class="col-lg-3 control-label">Category Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="division_name" placeholder="Division Name">
+                                    <input type="text" class="form-control" name="category_name" placeholder="Category Name">
                                 </div>
                             </div>
                             <br><br>
@@ -33,26 +32,26 @@
     </form>
     <br><br><br>
 
-    <form id="division_update_form">
+    <form id="category_update_form">
         <div id="editModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">EDIT DIVISION</h5>
+                        <h5 class="modal-title">Edit Category</h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
                             <div class="form-group">
                                 <div class="col-lg-9">
-                                    <input type="hidden" class="form-control" id="division_id" name="division_id">
+                                    <input type="hidden" class="form-control" id="category_id" name="category_id">
                                 </div>
                             </div>
                             <br><br>
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Division Name:</label>
+                                <label class="col-lg-3 control-label">Category Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="division_name" name="division_name">
+                                    <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Category Name">
                                 </div>
                             </div>
                             <br><br>
@@ -94,7 +93,8 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-    <script type="text/javascript" src="{{asset('backend_assets/js/division.js')}}"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('backend_assets/js/category.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('Backend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jubair/Desktop/E-bazaar/E-bazzar/EBajara/resources/views/Backend/Admin/Category_Settings/Category/category.blade.php ENDPATH**/ ?>
