@@ -1,9 +1,9 @@
-<div class="sidebar">
+<div class="sidebar"> 
 	<div class="sidebar-content">
 		<ul class="navigation">
 			<li class="<?php echo e((request()->is('admin')) ? 'active' : ''); ?>"><a href="<?php echo e(url('/admin')); ?>"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
 			<li>
-				<a href="#"><span>Accunt Settings</span><i class="icon-user4"></i></a>
+				<a href="#"><span>Account Settings</span><i class="icon-user4"></i></a>
 				<ul>
 					<li><a href="form_components.html">Form components</a></li>
 					<li><a href="form_layouts.html">Form layouts</a></li>
@@ -28,10 +28,11 @@
 				
 			</li>
 			<li>
-				<a href="#"><span>Products</span><i class="icon-user4"></i></a>
+				<a href="#"><span>Products</span><i class="icon-android"></i></a>
 				<ul>
-					<li><a href="form_components.html">Form components</a></li>
-					<li><a href="form_layouts.html">Form layouts</a></li>
+					<li class="<?php echo e((request()->is('admin/product/create')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/product/create')); ?>">Add Product</a></li>
+					<li class="<?php echo e((request()->is('admin/product')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/product')); ?>">Product List</a></li>
+					
 				</ul>
 			</li>
 			<li class="<?php echo e((request()->is('admin/slider')) ? 'active' : ''); ?>" >
