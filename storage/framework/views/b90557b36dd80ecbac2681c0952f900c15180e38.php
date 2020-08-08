@@ -3,7 +3,7 @@
 <?php $__env->startSection('head_name', 'Brand'); ?>
 <?php $__env->startSection('content'); ?>
     <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_brand">Add new</button>
-    <form id="brand_form">
+    <form id="brand_form" enctype="multipart/form-data"><?php echo csrf_field(); ?>
         <div id="add_brand" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -13,12 +13,17 @@
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
-                            
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">brand Name:</label>
+                                <label class="col-lg-3 control-label">Brand Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="brand_name" placeholder="brand Name">
-                                    <span class="text-danger" id="brand_name"></span>
+                                    <input type="text" class="form-control" name="brand_name" placeholder="Brand Name">
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Description:</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" name="description" placeholder="Description">
                                 </div>
                             </div>
                             <br><br>
@@ -33,28 +38,29 @@
         </div>
     </form>
     <br><br><br>
-
-    <form id="sub_category_update_form">
+ 
+    <form id="brand_update_form">
         <div id="editModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Edit Sub Category</h5>
+                        <h5 class="modal-title">EDIT Brand</h5>
                     </div>
                     <div class="panel-body">
                             <div class="form-group">
+                                <label class="col-lg-3 control-label">Brand Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="hidden" class="form-control" id="sub_category_id" name="sub_category_id">
+                                    <input type="text" class="form-control" id="brand_name" name="brand_name">
                                 </div>
                             </div>
                             <br><br>
-                            
+
+
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Sub Category Name:</label>
+                                <label class="col-lg-3 control-label">Description:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="e_sub_category_name" name="sub_category_name" placeholder="Sub Category Name">
-                                    <span class="text-danger" id="u_sub_category_name"></span>
+                                    <input type="text" class="form-control" id="description" name="description">
                                 </div>
                             </div>
                             <br><br>
@@ -99,4 +105,5 @@
 <?php $__env->startSection('script'); ?>
     <script type="text/javascript" src="<?php echo e(asset('backend_assets/js/brand.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('Backend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/kiri2ka/Laravel/Running Project/EBajara/resources/views/Backend/Admin/Brand/brand.blade.php ENDPATH**/ ?>

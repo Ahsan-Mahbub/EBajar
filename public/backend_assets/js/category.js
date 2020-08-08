@@ -17,7 +17,7 @@ $(document).ready(function(){
             error: function (error) {
                 console.log(error);
             }
-        })
+        }) 
     });
     $(document).on("click", ".delete", function () {
         let data = $(this).attr("data");
