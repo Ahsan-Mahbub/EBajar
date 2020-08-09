@@ -15,6 +15,16 @@ Route::prefix('admin')->group(function(){
         Route::post('/division/store', 'DivisionController@store');
         Route::post('/division/update', 'DivisionController@update');
         Route::get('/division/show/{id}', 'DivisionController@show');
+        //District
+        Route::resource('/district', 'DistrictController');
+        Route::post('/district/store', 'DistrictController@store');
+        // Route::post('/district/update', 'DistrictController@update');
+        Route::get('/district/show/{id}', 'DistrictController@show');
+        //Upzilla
+        Route::resource('/upzilla', 'UpzillaController');
+        //Route::post('/upzilla/store', 'UpzillaController@store');
+        //Route::post('/upzilla/update', 'UpzillaController@update');
+        Route::get('/upzilla/show/{id}', 'UpzillaController@show');
     	//Category
     	Route::resource('/category', 'CategoryController');
         Route::post('/category/store', 'CategoryController@store');

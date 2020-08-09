@@ -1,30 +1,34 @@
 @extends('Backend.layouts.main')
-@section('title', '|| Brand')
-@section('head', 'Brand')
-@section('head_name', 'Brand')
+@section('title', '|| Upzilla')
+@section('head', 'Upzilla')
+@section('head_name', 'Dashboard')
 @section('content')
-    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_brand">Add new</button>
-    <form id="brand_form" enctype="multipart/form-data">@csrf
-        <div id="add_brand" class="modal fade">
+    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_upzilla">Add new</button> 
+    <form id="upzilla_form">
+        <div id="add_upzilla" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Add Brand</h5>
+                        <h5 class="modal-title">ADD Upzilla</h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
+                                <label class="col-lg-3 control-label">District Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="brand_name" placeholder="Brand Name">
+                                    <select name="district_name" class="form-control">
+                                        <option selected disabled hidden>Choose one</option>
+                                    @foreach($district as $value)
+                                    <option value="{{$value->district_id}}">{{$value->district_name}}</option>
+                                    @endforeach
+                                    </select>
                                 </div>
-                            </div>
-                            <br><br>
+                            </div><br><br>
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Description:</label>
+                                <label class="col-lg-3 control-label">Upzilla Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="description" placeholder="Description">
+                                    <input type="text" class="form-control" name="upzilla_name" placeholder="Upzilla Name">
                                 </div>
                             </div>
                             <br><br>
@@ -39,34 +43,37 @@
         </div>
     </form>
     <br><br><br>
- 
-    <form id="brand_update_form">
+
+    <form id="upzilla_update_form">
         <div id="editModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">EDIT Brand</h5>
+                        <h5 class="modal-title">EDIT Upzilla</h5>
                     </div>
                     <div class="panel-body">
-                        <div class="form-group">
-                                <div class="col-lg-9">
-                                    <input type="hidden" class="form-control" id="brand_id" name="brand_id">
-                                </div>
-                            </div>
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="brand_name" name="brand_name">
+                                    <input type="hidden" class="form-control" id="upzilla_id" name="upzilla_id">
                                 </div>
                             </div>
                             <br><br>
-
-
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Description:</label>
+                                <label class="col-lg-3 control-label">District Name:</label>
+                                <div class="col-lg-9"> 
+                                    <select name="district_name" id="district_name" class="form-control">
+                                        <option selected disabled hidden>Choose one</option>
+                                    @foreach($district as $value)
+                                    <option value="{{$value->district_id}}">{{$value->district_name}}</option>
+                                    @endforeach
+                                    </select>
+                                </div>
+                            </div><br><br>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Upzilla Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="description" name="description">
+                                    <input type="text" class="form-control" id="upzilla_name" name="upzilla_name" placeholder="Upzilla Name">
                                 </div>
                             </div>
                             <br><br>
@@ -109,5 +116,5 @@
     </div>
 @endsection
 @section('script')
-    <script type="text/javascript" src="{{asset('backend_assets/js/brand.js')}}"></script>
+    <script type="text/javascript" src="{{asset('backend_assets/js/upzilla.js')}}"></script>
 @endsection

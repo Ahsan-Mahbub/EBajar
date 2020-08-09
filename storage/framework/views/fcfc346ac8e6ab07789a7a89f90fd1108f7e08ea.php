@@ -1,30 +1,35 @@
-@extends('Backend.layouts.main')
-@section('title', '|| Brand')
-@section('head', 'Brand')
-@section('head_name', 'Brand')
-@section('content')
-    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_brand">Add new</button>
-    <form id="brand_form" enctype="multipart/form-data">@csrf
-        <div id="add_brand" class="modal fade">
+<?php $__env->startSection('title', '|| Distract'); ?>
+<?php $__env->startSection('head', 'Distract'); ?>
+<?php $__env->startSection('head_name', 'Distract'); ?>
+<?php $__env->startSection('content'); ?>
+    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_district">Add new</button>
+    <form id="district_form">
+        <div id="add_district" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Add Brand</h5>
+                        <h5 class="modal-title">ADD DISTRICT</h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
+                                <label class="col-lg-3 control-label">Division Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="brand_name" placeholder="Brand Name">
+                                    <select name="division_name" class="form-control">
+                                        <option selected disabled hidden>Choose one</option>
+                                    <?php $__currentLoopData = $division; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($value->division_id); ?>"><?php echo e($value->division_name); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
+                                    <span class="text-danger" id="division_name"></span>
                                 </div>
-                            </div>
-                            <br><br>
+                            </div><br><br>
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Description:</label>
+                                <label class="col-lg-3 control-label">Distract Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="description" placeholder="Description">
+                                    <input type="text" class="form-control" name="district_name" placeholder="Distract Name">
+                                    <span class="text-danger" id="district_name"></span>
                                 </div>
                             </div>
                             <br><br>
@@ -40,33 +45,38 @@
     </form>
     <br><br><br>
  
-    <form id="brand_update_form">
+    <form id="district_update_form">
         <div id="editModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">EDIT Brand</h5>
+                        <h5 class="modal-title">EDIT DISTRICT</h5>
                     </div>
                     <div class="panel-body">
-                        <div class="form-group">
-                                <div class="col-lg-9">
-                                    <input type="hidden" class="form-control" id="brand_id" name="brand_id">
-                                </div>
-                            </div>
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="brand_name" name="brand_name">
+                                    <input type="hidden" class="form-control" id="district_id" name="district_id">
                                 </div>
                             </div>
                             <br><br>
-
-
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Description:</label>
+                                <label class="col-lg-3 control-label">Division Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="description" name="description">
+                                    <select name="division_name" class="form-control" id="e_division_name">
+                                        <option selected disabled hidden>Choose one</option>
+                                    <?php $__currentLoopData = $division; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($value->division_id); ?>"><?php echo e($value->division_name); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
+                                    <span class="text-danger" id="u_division_name"></span>
+                                </div>
+                            </div><br><br>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Distract Name:</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="e_district_name" name="district_name" placeholder="Distract Name">
+                                    <span class="text-danger" id="u_district_name"></span>
                                 </div>
                             </div>
                             <br><br>
@@ -107,7 +117,9 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-    <script type="text/javascript" src="{{asset('backend_assets/js/brand.js')}}"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('backend_assets/js/district.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('Backend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jubair/Desktop/E-commerce/EBajara/resources/views/Backend/Admin/Address/District/district.blade.php ENDPATH**/ ?>
