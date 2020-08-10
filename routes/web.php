@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route; 
+use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
@@ -33,8 +33,8 @@ Route::prefix('admin')->group(function(){
         //Slider
         Route::resource('/slider', 'SliderController');
         Route::post('/slider/store', 'SliderController@store');
-        Route::post('/slider/update', 'SliderController@update');
         Route::get('/slider/show/{id}', 'SliderController@show');
+        Route::post('/slider/update','SliderController@update');
         //Product
         Route::resource('/product', 'ProductController');
         Route::get('/product/category/{category_id}', 'ProductController@category');

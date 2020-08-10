@@ -13,7 +13,7 @@ class SliderRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,11 +23,21 @@ class SliderRequest extends FormRequest
      */
     public function rules()
     {
-        
-        return [
-            'slider_name' => 'required',
-            'description' => 'required',
-            'image' => 'required',
-        ];
+        if('id')
+        {
+            return [
+                'slider_name' => 'required',
+                'description' => 'required',
+                'image' => 'mimes:png,jpg,jpeg',
+            ];
+        }
+        else
+        {
+            return [
+                'slider_name' => 'required',
+                'description' => 'required',
+                'image' => 'required|mimes:png,jpg,jpeg',
+            ];
+        }
     }
 }

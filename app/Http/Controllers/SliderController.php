@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Slider;
+use App\Traits\FileVerifyUpload;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests\SliderRequest;
-use Illuminate\Support\Facades\Validator;
-use PhpParser\Node\Expr\AssignOp\Div;
+use Illuminate\Support\Facades\File;
 
 class SliderController extends Controller
 {
+    use FileVerifyUpload;
     /**
      * Display a listing of the resource.
      *
@@ -29,55 +30,29 @@ class SliderController extends Controller
     public function create(Request $request)
     {
         $slider = Slider::search($request->search)->paginate(10);
-        return view('Backend.Admin.Slider.list', [
-            'slider' => $slider
-            ]);
+        return view('Backend.Admin.Slider.list', ['slider' => $slider]);
     }
 
     /**
-     * Store a newly created resource in storage. 
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SliderRequest $request)
     {
-        $slider = new Slider;
-
-        $validation = Validator::make($request->all(),$slider->validation());
-        if ($validation->fails())
-        {
-            $status=500;
-            $response=[
-            'status'=>$status,
-            'errors'=>$validation->errors(),
-            ];
-        }
-        else
-        {
-            if ($request->hasFile('image')) 
-            {
-                $filetype=$request->file('image')->getClientOriginalExtension();
-                $path=public_path('backend_assets/images/BackendImg/Slider/');
-                $image='Slider'.time().'.'.$filetype;
-                $request->file('image')->move($path,$image);
-            }
-
-            $input=[
-            'image'=>$image,
-            'slider_name'=>$request->slider_name,
-            'description'=>$request->description,
-            ];
-
-            Slider::create($input);
-            $status=201;
-            $response=[
+     $slider=new Slider();
+     $slider->image=$this->ImageVerifyUpload($request,'image','backend_assets/images/BackendImg/Slider/','Slider');
+     $slider->slider_name=$request->slider_name;
+     $slider->description=$request->description;
+     $slider->save();
+        $status=201;
+        $response=[
                 'status'=>$status,
-                'data'=>$slider,
+                'message'=>'Successfully Inserted',
             ];
-        } 
         return response()->json($response,$status);
-    } 
+    }
 
     /**
      * Display the specified resource.
@@ -95,7 +70,7 @@ class SliderController extends Controller
             $slider_status->update(["status" => 1]);
             $status = 200;
         }
-        return response()->json($slider_status, $status); 
+        return response()->json($slider_status, $status);
     }
 
     /**
@@ -106,7 +81,7 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        //
+        return response()->json($slider);
     }
 
     /**
@@ -116,9 +91,31 @@ class SliderController extends Controller
      * @param  \App\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Slider $slider)
+    public function update(SliderRequest $request)
     {
-        //
+        $slider=Slider::findOrFail($request->id);
+            if ($request->hasFile('image'))
+            {
+                if($slider->image)
+                {
+                    $path='/backend_assets/images/BackendImg/Slider/'.$slider->image;
+                    if (File::exists($path)) {
+                        File::delete($path);
+                    }
+                }
+                $slider->image=$this->ImageVerifyUpload($request,'image','backend_assets/images/BackendImg/Slider/','Slider');
+            }
+
+            $slider->slider_name=$request->slider_name;
+            $slider->description=$request->description;
+            $slider->save();
+            $status=201;
+            $response=[
+                'status'=>$status,
+                'message'=>'Successfully Updated',
+            ];
+        return response()->json($response,$status);
+
     }
 
     /**

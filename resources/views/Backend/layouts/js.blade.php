@@ -28,6 +28,11 @@
 <script type="text/javascript" src="{{asset('backend_assets/js/application.js')}}"></script>
 <script type="text/javascript" src="{{asset('backend_assets/js/sweetalert.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('backend_assets/js/toastr.min.js')}}"></script>
+<script>
+    @foreach ($errors->all() as $error)
+        toastr.warning({{$error}});
+    @endforeach
+</script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
