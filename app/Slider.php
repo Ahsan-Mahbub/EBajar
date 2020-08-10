@@ -10,14 +10,6 @@ class Slider extends Model
   protected $primaryKey = "slider_id";
   protected $fillable = ["slider_name", "description", "image", "status"];
 
-  public function validation()
-    {
-      return [
-          'slider_name' => 'required',
-          'description' => 'required',
-          'image' => 'required',
-      ];
-    }
 
   public function scopeSearch($query, $search)
   {
