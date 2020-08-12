@@ -13,6 +13,8 @@
 				<a href="#"><span>Address Settings</span><i class="icon-location4"></i></a>
 				<ul>
 					<li class="{{ (request()->is('admin/division')) ? 'active' : '' }}" ><a href="{{ url('/admin/division')}}">Division</a></li>
+					<li class="{{ (request()->is('admin/district')) ? 'active' : '' }}" ><a href="{{ url('/admin/district')}}">District</a></li>
+					<li class="{{ (request()->is('admin/sub_district')) ? 'active' : '' }}" ><a href="{{ url('/admin/sub_district')}}">Sub District</a></li>
 					<li><a href="form_layouts.html">Form layouts</a></li>
 				</ul>
 			</li>

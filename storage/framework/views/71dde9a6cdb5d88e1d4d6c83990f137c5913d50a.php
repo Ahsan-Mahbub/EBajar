@@ -1,30 +1,33 @@
-@extends('Backend.layouts.main')
-@section('title', '|| Brand')
-@section('head', 'Brand')
-@section('head_name', 'Brand')
-@section('content')
-    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_brand">Add new</button>
-    <form id="brand_form" enctype="multipart/form-data">@csrf
-        <div id="add_brand" class="modal fade">
+<?php $__env->startSection('title', '|| Sub District'); ?>
+<?php $__env->startSection('head', 'Sub District'); ?>
+<?php $__env->startSection('head_name', 'Dashboard'); ?>
+<?php $__env->startSection('content'); ?>
+    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_sub_district">Add new</button> 
+    <form id="sub_district_form">
+        <div id="add_sub_district" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Add Brand</h5>
+                        <h5 class="modal-title">ADD Sub District</h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
+                                <label class="col-lg-3 control-label">District Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="brand_name" placeholder="Brand Name">
+                                    <select name="district_name" class="form-control">
+                                        <option selected disabled hidden>Choose one</option>
+                                    <?php $__currentLoopData = $district; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($value->district_id); ?>"><?php echo e($value->district_name); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
                                 </div>
-                            </div>
-                            <br><br>
+                            </div><br><br>
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Description:</label>
+                                <label class="col-lg-3 control-label">Sub District Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="description" placeholder="Description">
+                                    <input type="text" class="form-control" name="sub_district_name" placeholder="Sub District Name">
                                 </div>
                             </div>
                             <br><br>
@@ -39,34 +42,37 @@
         </div>
     </form>
     <br><br><br>
- 
-    <form id="brand_update_form">
+
+    <form id="sub_district_update_form">
         <div id="editModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">EDIT Brand</h5>
+                        <h5 class="modal-title">EDIT Sub District</h5>
                     </div>
                     <div class="panel-body">
-                        <div class="form-group">
-                                <div class="col-lg-9">
-                                    <input type="hidden" class="form-control" id="brand_id" name="brand_id">
-                                </div>
-                            </div>
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="brand_name" name="brand_name">
+                                    <input type="hidden" class="form-control" id="sub_district_id" name="sub_district_id">
                                 </div>
                             </div>
                             <br><br>
-
-
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Description:</label>
+                                <label class="col-lg-3 control-label">District Name:</label>
+                                <div class="col-lg-9"> 
+                                    <select name="district_name" id="district_name" class="form-control">
+                                        <option selected disabled hidden>Choose one</option>
+                                    <?php $__currentLoopData = $district; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($value->district_id); ?>"><?php echo e($value->district_name); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
+                                </div>
+                            </div><br><br>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Sub District Name:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="description" name="description">
+                                    <input type="text" class="form-control" id="sub_district_name" name="sub_district_name">
                                 </div>
                             </div>
                             <br><br>
@@ -107,7 +113,9 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-    <script type="text/javascript" src="{{asset('backend_assets/js/brand.js')}}"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('backend_assets/js/sub_district.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('Backend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jubair/Desktop/E-Bajar/EBajar/resources/views/Backend/Admin/Address/SubDistrict/sub_district.blade.php ENDPATH**/ ?>
