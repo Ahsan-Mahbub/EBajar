@@ -52,6 +52,11 @@ Route::prefix('admin')->group(function(){
         Route::post('/product/store', 'ProductController@store');
         Route::post('/product/update', 'ProductController@update');
         Route::get('/product/show/{id}', 'ProductController@show');
+        //Profile
+        Route::resource('/profile', 'ProfileController');
+        Route::resource('/password', 'PasswordController');
+        Route::post('password/store', 'PasswordController@store');
+        Route::post('password/create', 'PasswordController@create');
 
 
     });

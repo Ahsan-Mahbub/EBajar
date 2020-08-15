@@ -159,15 +159,14 @@
 
 			<li class="user dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown">
-					<img src="images/demo/users/face1.png" alt="">
-					<span>Eugene Kopyov</span>
+					<img src="asset(images/demo/users/face1.png)" alt="">
+					<span style="color: #000; font-variant-caps: small-caps;">{{Auth::user()->name}}</span>
 					<i class="caret"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-right icons-right">
-					<li><a href="#"><i class="icon-user"></i> Profile</a></li>
-					<li><a href="#"><i class="icon-bubble4"></i> Messages</a></li>
-					<li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-					<li>
+
+					<li class="{{ (request()->is('admin/profile')) ? 'active' : '' }}"><a href="{{url('/admin/profile')}}"><i class="icon-user"></i> Profile Change</a></li>
+					<li class="{{ (request()->is('admin/password')) ? 'active' : '' }}"><a href="{{url('/admin/password')}}"><i class="icon-lock form-control-feedback"></i> Password Change</a></li>
 						<form  action="{{ route('logout') }}" method="POST">
 		                    @csrf
 		                    <button><i class="icon-exit"></i> Logout</button>
