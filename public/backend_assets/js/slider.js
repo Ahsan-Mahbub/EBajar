@@ -90,7 +90,7 @@ $(document).on("click",".edit",function ()
             error:function(errors){
                 console.log(errors);
             }
-        });
+        }); 
     });
 
     $(document).on("click", "#status", function () {

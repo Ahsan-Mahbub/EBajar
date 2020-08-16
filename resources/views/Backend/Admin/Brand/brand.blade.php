@@ -1,4 +1,4 @@
-@extends('Backend.layouts.main')
+ @extends('Backend.layouts.main')
 @section('title', '|| Brand')
 @section('head', 'Brand')
 @section('head_name', 'Brand')

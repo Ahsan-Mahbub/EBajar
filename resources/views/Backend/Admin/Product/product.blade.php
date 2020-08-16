@@ -18,11 +18,6 @@
                                     <option value="{{$value->category_id}}">{{$value->category_name}}</option>
                                 @endforeach
                             </select>
-                            @if($errors->first('brand_name'))
-                                <label for="brand_name" class="error">{{$errors->first('brand_name')}}</label>
-                            @endif
-                                
-                            
                         </div>
                     </div>
                 </div>

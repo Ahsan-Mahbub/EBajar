@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
 
@@ -44,7 +44,7 @@ class ProductController extends Controller
     }
     public function category($category_id)
     {
-        $category = Category::where('category_name', $category_id)->get();
+        $sub_category = Category::where('category_name', $category_id)->get();
         return ProductCollection::collection($sub_category);
     }
 

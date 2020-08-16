@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -31,7 +31,7 @@ class SliderRequest extends FormRequest
                 'image' => 'mimes:png,jpg,jpeg',
             ];
         }
-        else
+        else 
         {
             return [
                 'slider_name' => 'required',
