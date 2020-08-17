@@ -32,8 +32,9 @@ class BrandController extends Controller
             $category->where('brand_name', 'LIKE', '%' . $request->search . '%');
         }
         })->paginate(10);
-        return view('Backend.Admin.Brand.list', ['brand' => $brand]);  
+        return view('Backend.Admin.Brand.list', ['brand' => $brand]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -78,7 +79,7 @@ class BrandController extends Controller
             $brand_status->update(["status" => 1]);
             $status = 200;
         }
-        return response()->json($brand_status, $status); 
+        return response()->json($brand_status, $status);
     }
 
     /**

@@ -40,6 +40,14 @@ Route::prefix('admin')->group(function(){
         Route::post('/brand/store', 'BrandController@store');
         Route::post('/brand/update', 'BrandController@update');
         Route::get('/brand/show/{id}', 'BrandController@show');
+        //color
+        Route::get('showlist' , 'ColorController@datalist');
+        Route::resource('/color', 'ColorController');
+        Route::post('/color/store' , 'ColorController@store');
+        route::post('/color/update' , 'ColorController@update');
+
+
+
         //Slider
         Route::resource('/slider', 'SliderController');
         Route::post('/slider/store', 'SliderController@store');
