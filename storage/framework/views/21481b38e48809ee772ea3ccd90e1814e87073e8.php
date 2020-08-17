@@ -1,3 +1,4 @@
+ 
 <?php $__env->startSection('title', '|| Slider'); ?>
 <?php $__env->startSection('head', 'Slider'); ?>
 <?php $__env->startSection('head_name', 'Slider'); ?>
