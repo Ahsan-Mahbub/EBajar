@@ -10,13 +10,13 @@ class SubCategory extends Model
   protected $primaryKey = "sub_category_id";
   protected $fillable = ["sub_category_name", "category_name", "status"];
 
- // public function validation()
- // {
- //     return [
- //         'sub_category_name' => 'required',
- //         'category_name' => 'required',
- //     ];
- // }
+ public function validation()
+ {
+     return [
+         'sub_category_name' => 'required',
+         'category_name' => 'required',
+     ];
+ }
 
   public function scopeSearch($query, $search)
   {

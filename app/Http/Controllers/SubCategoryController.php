@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\SubCategory;
 use App\Category;
-use App\Http\Requests\SubCategoryRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,9 +18,9 @@ class SubCategoryController extends Controller
     {
         $sub_category = SubCategory::all();
         $category = Category::active()->get();
-        return view('Backend.Admin.Category_Settings.SubCategory.sub_category' ,[
+        return view('Backend.Admin.Category_Settings.SubCategory.sub_catagory' ,[
             'sub_category' => $sub_category,
-            'category' => $category
+            'category' => $category,
         ]);
     }
 
@@ -33,10 +32,14 @@ class SubCategoryController extends Controller
     public function create(Request $request)
     {
         $category = Category::active()->get();
-        $sub_category = SubCategory::search($request->search)->paginate(10);
+        $sub_category = SubCategory::where(function ($sub_category) use ($request) {
+            if ($request->search) {
+                $sub_category->where('sub_category_name', 'LIKE', '%' . $request->search . '%');
+            }
+        })->paginate(10);
         return view('Backend.Admin.Category_Settings.SubCategory.list', [
             'sub_category' => $sub_category,
-            'category' => $category
+            'category' => $category,
         ]);
     }
 
@@ -46,11 +49,26 @@ class SubCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SubCategoryRequest $request)
+    public function store(Request $request)
     {
         $sub_category_model = new SubCategory();
-        $sub_category_model->fill($request->all())->save();
-        return response()->json($sub_category_model, 201);
+        $validation = Validator::make($request->all(), $sub_category_model->validation());
+        if ($validation->fails()) {
+            $status = 400;
+            $response = [
+                "status" => $status,
+                "errors" => $validation->errors(),
+            ];
+        }
+        else {
+            $sub_category_model->fill($request->all())->save();
+            $status = 201;
+            $response = [
+                "status" => $status,
+                "errors" => $validation->errors(),
+            ];
+        }
+        return response()->json($response, $status);
     }
 
     /**
@@ -59,9 +77,17 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(SubCategory $subCategory)
+    public function show($id)
     {
-        //
+        $sub_category_status = SubCategory::findOrFail($id);
+        if ($sub_category_status->status == 1) :
+            $sub_category_status->update(["status" => 0]);
+            $status = 201;
+        else :
+            $sub_category_status->update(["status" => 1]);
+            $status = 200;
+        endif;
+        return response()->json($sub_category_status, $status);
     }
 
     /**
@@ -70,9 +96,10 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(SubCategory $subCategory)
+    public function edit($id)
     {
-        //
+        $sub_category_data = SubCategory::findOrFail($id);
+        return response()->json($sub_category_data, 201);
     }
 
     /**
@@ -82,9 +109,25 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubCategory $subCategory)
+    public function update(Request $request)
     {
-        //
+        // $sub_category_model = SubCategory::findOrFail($request->sub_category_id);
+        // $validation = Validator::make($request->all(), $sub_category_model->validation());
+        // if ($validation->fails()) {
+        //     $status = 400;
+        //     $response = [
+        //         "status" => $status,
+        //         "errors" => $validation->errors(),
+        //     ];
+        // } else {
+        //     $sub_category_model->fill($request->all())->save();
+        //     $status = 201;
+        //     $response = [
+        //         "status" => $status,
+        //         "errors" => $validation->errors(),
+        //     ];
+        // }
+        // return response()->json($response, $status);
     }
 
     /**
@@ -93,8 +136,9 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubCategory $subCategory)
+    public function destroy($id)
     {
-        //
+        $sub_category = SubCategory::findOrFail($id)->delete();
+        return response()->json($sub_category, 202);
     }
 }

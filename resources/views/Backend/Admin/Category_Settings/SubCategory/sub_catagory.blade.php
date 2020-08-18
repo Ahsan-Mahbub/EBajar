@@ -1,5 +1,5 @@
 @extends('Backend.layouts.main')
-@section('title', '|| Sub Category') 
+@section('title', '|| Sub Category')
 @section('head', 'Sub Category')
 @section('head_name', 'Sub Category')
 @section('content')
@@ -10,7 +10,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Add Sub Category</h5>
+                        <h5 class="modal-title">ADD Sub Category</h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
@@ -25,7 +25,8 @@
                                     </select>
                                     <span class="text-danger" id="category_name"></span>
                                 </div>
-                            </div><br><br>
+                            </div>
+                            <br><br>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Sub Category Name:</label>
                                 <div class="col-lg-9">
@@ -45,14 +46,14 @@
         </div>
     </form>
     <br><br><br>
-
-    <form id="sub_category_update_form">
+ 
+    <form id="district_update_form">
         <div id="editModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Edit Sub Category</h5>
+                        <h5 class="modal-title">EDIT SUB CATEGORY</h5>
                     </div>
                     <div class="panel-body">
                             <div class="form-group">
@@ -72,7 +73,8 @@
                                     </select>
                                     <span class="text-danger" id="u_category_name"></span>
                                 </div>
-                            </div><br><br>
+                            </div>
+                            <br><br>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Sub Category Name:</label>
                                 <div class="col-lg-9">
