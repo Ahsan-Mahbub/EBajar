@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 
 use App\Slider;
@@ -33,7 +33,7 @@ class SliderController extends Controller
         return view('Backend.Admin.Slider.list', ['slider' => $slider]);
     }
 
-    /**
+    /** 
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

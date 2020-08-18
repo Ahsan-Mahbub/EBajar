@@ -35,19 +35,6 @@
                                 </div>
                             </div>
                             <br><br>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
-                                <div class="col-lg-9">
-                                    <select name="brand_name" class="form-control">
-                                        <option selected disabled hidden>Choose one</option>
-                                    @foreach($brand as $value)
-                                    <option value="{{$value->brand_id}}">{{$value->brand_name}}</option>
-                                    @endforeach
-                                    </select>
-                                    <span class="text-danger" id="brand_name"></span>
-                                </div>
-                            </div>
-                            <br><br>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -93,19 +80,6 @@
                                 <div class="col-lg-9">
                                     <input type="text" class="form-control" id="e_sub_category_name" name="sub_category_name" placeholder="Sub Category Name">
                                     <span class="text-danger" id="u_sub_category_name"></span>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Brand Name:</label>
-                                <div class="col-lg-9">
-                                    <select name="brand_name" class="form-control" id="e_brand_name">
-                                        <option selected disabled hidden>Choose one</option>
-                                    @foreach($brand as $value)
-                                    <option value="{{$value->brand_id}}">{{$value->brand_name}}</option>
-                                    @endforeach
-                                    </select>
-                                    <span class="text-danger" id="u_brand_name"></span>
                                 </div>
                             </div>
                             <br><br>

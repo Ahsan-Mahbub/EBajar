@@ -4,7 +4,6 @@
         <th>#</th>
         <th>Category Name</th>
         <th>Sub Category Name</th>
-        <th>Brand Name</th>
         <th>Status</th>
         <th>Action</th>
     </tr>
@@ -18,10 +17,6 @@
                 {{$category_data->category_name}}
             </td>
             <td>{{$value->sub_category_name}}</td>
-            <td>
-                @php $brand_data = collect($brand)->where('brand_id', $value->brand_name)->first() @endphp
-                {{$brand_data->brand_name}}
-            </td>
             <td>
                 @if ($value->status == 1)
                     <span class="text-success">Active</span>

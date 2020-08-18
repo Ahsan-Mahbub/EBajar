@@ -1,10 +1,10 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
 
 use App\Product; 
 use App\ProductImages;
-use App\Category;
+use App\Category; 
 use App\SubCategory;
 use App\Brand;
 use Illuminate\Http\Request;
@@ -44,7 +44,7 @@ class ProductController extends Controller
     }
     public function category($category_id)
     {
-        $category = Category::where('category_name', $category_id)->get();
+        $sub_category = Category::where('category_name', $category_id)->get();
         return ProductCollection::collection($sub_category);
     }
 
@@ -66,9 +66,6 @@ class ProductController extends Controller
         $product_model->sub_category_name = $request->sub_category_name;
         $product_model->brand_name = $request->brand_name;
         $product_model->product_name = $request->product_name;
-        $product_model->product_quantity = $request->product_quantity;
-        $product_model->product_weight = $request->product_weight;
-        $product_model->product_size = $request->product_size;
         $product_model->product_prize = $request->product_prize;
         $product_model->description = $request->description;
         $product_model->has_image = $request->images != '' ? 1 : 0;

@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use App\SubCategory;
 use App\Category;
-use App\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use PhpParser\Node\Expr\AssignOp\Div;
 
 class SubCategoryController extends Controller
 {
@@ -20,11 +18,9 @@ class SubCategoryController extends Controller
     {
         $sub_category = SubCategory::all();
         $category = Category::active()->get();
-        $brand = Brand::active()->get();
         return view('Backend.Admin.Category_Settings.SubCategory.sub_catagory' ,[
             'sub_category' => $sub_category,
             'category' => $category,
-            'brand' => $brand,
         ]);
     }
 
@@ -36,7 +32,6 @@ class SubCategoryController extends Controller
     public function create(Request $request)
     {
         $category = Category::active()->get();
-        $brand = Brand::active()->get();
         $sub_category = SubCategory::where(function ($sub_category) use ($request) {
             if ($request->search) {
                 $sub_category->where('sub_category_name', 'LIKE', '%' . $request->search . '%');
@@ -45,7 +40,6 @@ class SubCategoryController extends Controller
         return view('Backend.Admin.Category_Settings.SubCategory.list', [
             'sub_category' => $sub_category,
             'category' => $category,
-            'brand' => $brand,
         ]);
     }
 

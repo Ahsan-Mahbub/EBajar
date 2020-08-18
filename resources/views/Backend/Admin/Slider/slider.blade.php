@@ -1,4 +1,4 @@
-@extends('Backend.layouts.main')
+@extends('Backend.layouts.main') 
 @section('title', '|| Slider')
 @section('head', 'Slider')
 @section('head_name', 'Slider')

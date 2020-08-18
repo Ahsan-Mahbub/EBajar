@@ -11,7 +11,7 @@ class CreateProductsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() 
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('product_id');
@@ -21,12 +21,10 @@ class CreateProductsTable extends Migration
             $table->foreign('sub_category_name')->references('sub_category_id')->on('sub_categories')->onDelete('cascade');
             $table->unsignedBigInteger('brand_name');
             $table->foreign('brand_name')->references('brand_id')->on('brands')->onDelete('cascade');
-            $table->string('product_name');
-            $table->string('product_quantity');
-            $table->string('product_weight');
-            $table->string('product_size');
-            $table->string('product_prize');
-            $table->string('description');
+            $table->string('product_name')->nullable();
+            $table->string('product_size')->nullable();
+            $table->string('product_prize')->nullable();
+            $table->string('description')->nullable();
             $table->integer('has_image')->default(null);
             $table->integer('status')->default(1);
             $table->timestamps();
