@@ -10,35 +10,16 @@
     @include('Backend.layouts.js')
 </head>
 
-<body class="full-width page-condensed">
-
-
-<div class="navbar navbar-inverse" role="navigation">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-right">
-            <span class="sr-only">Toggle navbar</span>
-            <i class="icon-grid3"></i>
-        </button>
-{{--        <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Londinium"></a>--}}
-    </div>
-</div>
-
+<body class="full-width page-condensed" style="background-image: url(&quot;/ecommerce.jpg&quot;);background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;">
 
 <div class="login-wrapper">
         <div class="popup-header" style="margin-top: -60px;">
-            <a href="#" class="pull-left"><i class="icon-user-plus"></i></a>
+            <a href="{{route('login')}}" class="pull-left"><i class="icon-user"></i></a>
             <span class="text-semibold">User Register</span>
             <div class="btn-group pull-right">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cogs"></i></a>
-                <ul class="dropdown-menu icons-right dropdown-menu-right">
-                    <li><a href="#"><i class="icon-people"></i> Change user</a></li>
-                    <li><a href="#"><i class="icon-info"></i> Forgot password?</a></li>
-                    <li><a href="#"><i class="icon-support"></i> Contact admin</a></li>
-                    <li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
-                </ul>
             </div>
         </div>
-        <div class="well">
+        <div class="well"  style="background-image: url(&quot;/ecommerce.jpg&quot;); ackground-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="form-group has-feedback">

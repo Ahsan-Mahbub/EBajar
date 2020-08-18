@@ -6,17 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubCategory extends Model
 {
-  protected $table = "sub_categories";
+  protected $table = "sub_catagorys";
   protected $primaryKey = "sub_category_id";
-  protected $fillable = ["sub_category_name", "category_name", "status"];
+  protected $fillable = ["sub_category_name", "category_name", "brand_name", "status"];
 
- // public function validation()
- // {
- //     return [
- //         'sub_category_name' => 'required',
- //         'category_name' => 'required',
- //     ];
- // }
+ public function validation()
+ {
+     return [
+         'sub_category_name' => 'required',
+         'category_name' => 'required',
+         'brand_name' => 'required',
+     ];
+ }
 
   public function scopeSearch($query, $search)
   {

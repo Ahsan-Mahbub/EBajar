@@ -3,9 +3,6 @@ $(document).ready(function () {
     $(document).on("submit", "#sub_category_form", function (e) {
         e.preventDefault();
         let data = $(this).serializeArray();
-        $.each(data, function (key, value) {
-            $("#" + data[key].name).html("");
-        })
         $.ajax({
             url: "/admin/sub_category/store",
             data: data,
@@ -13,19 +10,12 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 datalist();
-                toastr.success("sub category data added successfully", "Success!");
+                toastr.success("Sub Category data added successfully", "Success!");
                 $("#close").click();
                 $("#sub_category_form").trigger("reset");
             },
             error: function (error) {
-                if (error.status === 422) {
-                    toastr.warning("Field is empty", "Warning!");
-                } else {
-                    toastr.error("Application errors", "Error!");
-                }
-                $.each(error.responseJSON.errors, function (i, value) {
-                    $("#" + i).html(value[0]);
-                })
+                console.log($data);
             }
         })
     });
@@ -42,16 +32,16 @@ $(document).ready(function () {
         .then((willDelete) => {
             if (willDelete) {
                 $.ajax({
-                    url: "/admin/district/" + data,
+                    url: "/admin/sub_category/"+data,
                     type: "delete",
                     dataType: "json",
                     success: function (response) {
                         datalist();
-                        toastr.success("District data deleted successfully", "Success!");
+                        toastr.success("Sub Category data deleted successfully", "Success!");
                     }
                 })
             } else {
-                swal("Your imaginary District data is safe!");
+                swal("Your imaginary Sub Category data is safe!");
             }
         });
     });
@@ -59,15 +49,15 @@ $(document).ready(function () {
         let data = $(this).attr("data");
 
         $.ajax({
-            url: "/admin/district/show/" + data,
+            url: "/admin/sub_category/show/"+data,
             type: "get",
             dataType: "json",
             success: function (response) {
                 datalist();
                 if (response.status === 0) {
-                    toastr.success("District status inactive", "Success!");
+                    toastr.success("Sub Category status inactive", "Success!");
                 } else {
-                    toastr.success("District status active", "Success!");
+                    toastr.success("Sub Category status active", "Success!");
                 }
             }
         })
@@ -77,52 +67,42 @@ $(document).ready(function () {
         let data = $(this).attr("data");
 
         $.ajax({
-            url: "/admin/district/" + data + "/edit",
+            url: "/admin/sub_category/"+data+"/edit",
             type: "get",
             dataType: "json",
             success: function (response) {
-                $("#e_division_name").val(response.division_name);
-                $("#e_district_name").val(response.district_name);
-                $("#e_description").val(response.description);
-                $("#district_id").val(response.district_id);
+                console.log(response);
+                $("#e_category_name").val(response.category_name);
+                $("#e_brand_name").val(response.brand_name);
+                $("#e_sub_category_name").val(response.sub_category_name);
+                $("#sub_category_id").val(response.sub_category_id);
             }
         })
     })
 
-    $(document).on("submit", "#district_update_form", function (e) {
+    $(document).on("submit", "#sub_category_update_form", function (e) {
         e.preventDefault();
-        let id = $("#district_id").val();
+        let id = $(this).attr("#sub_category_id");
         let data = $(this).serializeArray();
-        $.each(data, function (key, value) {
-            $("#e_" + data[key].name).html("");
-            console.log(data[key].name);
-        })
-
+        console.log(id);
         $.ajax({
-            url: "/admin/district/" + id,
+            url: "/admin/sub_category/update",
             data: data,
-            type: "put",
+            type: "post",
             dataType: "json",
             success: function (response) {
                 datalist();
-                toastr.success("District data updated successfully", "Success!");
+                toastr.success("Sub Category data updated successfully", "Success!");
                 $("#close2").click();
-                $("#district_update_form").trigger("reset");
+                $("#sub_category_update_form").trigger("reset");
             },
             error: function (error) {
-                if (error.status === 422) {
-                    toastr.warning("Field is empty", "Warning!");
-                } else {
-                    toastr.error("Application errors", "Error!");
-                }
-                console.log(error.responseJSON.errors);
-                $.each(error.responseJSON.errors, function (i, value) {
-                    $("#u_" + i).html(value[0]);
-                })
+                console.log(error);
             }
         })
     });
-    $("#data_lists").on("click", ".page-link", function (e) {
+
+    $("#data_lists").on("click", ".page-link", function(e) {
         e.preventDefault();
         let page_link = $(this).attr('href');
         datalist(page_link);
@@ -132,12 +112,12 @@ $(document).ready(function () {
         datalist();
     });
 
-    function datalist(page_link = "/admin/sub_category/create") {
+    function datalist(page_link="/admin/sub_category/create") {
         let search = $(".search").val();
 
         $.ajax({
             url: page_link,
-            data: {search: search},
+            data:{search : search},
             type: "get",
             datatype: "html",
             success: function (response) {

@@ -25,8 +25,9 @@ class SubCategoryRequest extends FormRequest
     {
         $sub_category = $this->route('sub_category');
         return [
-            'sub_category_name' => 'required|unique:sub_categories,sub_category_name,' . $sub_category .',sub_category_id',
+            'sub_category_name' => 'required|unique:sub_catagorys,sub_category_name,' . $sub_category .',sub_category_id',
             'category_name' => 'required',
+            'brand_name' => 'required',
         ];
     }
 }
