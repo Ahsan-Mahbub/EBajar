@@ -102,6 +102,29 @@ console.log(id);
     });
     //end update ajax
 
+    //show status ajax
+    $(document).on("click" , "#status" , function() {
+        let showid = $(this).attr("data");
+        $.ajax({
+            url:"admin/color/show/"+showid,
+            type:"get",
+            dataType:"json",
+            success:function(response)
+            {
+                datalistcolor();
+                if(response.status === 0)
+                {
+                    toastr.success("Brand status inactive", "Success!");
+                }
+                else
+                {
+                    toastr.success("Brand status Active", "Success!");
+                }
+            }
+        });
+    });
+    //end show status ajax
+
     //datalist ajax
     function datalistcolor()
     {

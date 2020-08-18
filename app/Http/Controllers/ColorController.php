@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Color;
 use App\Http\Requests\ColorRequest;
 use Illuminate\Http\Request;
+use function Symfony\Component\VarDumper\Dumper\esc;
 
 class ColorController extends Controller
 {
@@ -58,9 +59,20 @@ class ColorController extends Controller
      * @param  \App\Color  $color
      * @return \Illuminate\Http\Response
      */
-    public function show(Color $color)
+    public function show($id)
     {
-        //
+    $colorstatus = Color::findOrFail($id);
+    if ($colorstatus->status==1)
+    {
+    $colorstatus->update(['status'=>0]);
+    $status=201;
+    }
+    else
+        {
+            $colorstatus->update(['status'=>1]);
+            $status = 200;
+        }
+    return response()->json($colorstatus , $status);
     }
 
     /**

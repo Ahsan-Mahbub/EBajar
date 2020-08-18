@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('title', '|| Color'); ?>
 <?php $__env->startSection('head', 'Color'); ?>
 <?php $__env->startSection('head_name', 'Color'); ?>
