@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product; 
 use App\ProductImages;
-use App\Category;
+use App\Category; 
 use App\SubCategory;
 use App\Brand;
 use Illuminate\Http\Request;
