@@ -1,36 +1,22 @@
-@extends('Backend.layouts.main')
-@section('title', '|| Sub Category') 
-@section('head', 'Sub Category')
-@section('head_name', 'Sub Category')
-@section('content')
-    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_sub_category">Add new</button>
-    <form id="sub_category_form">
-        <div id="add_sub_category" class="modal fade">
+<?php $__env->startSection('title', '|| Category'); ?>
+<?php $__env->startSection('head', 'Category'); ?>
+<?php $__env->startSection('head_name', 'Category'); ?>
+<?php $__env->startSection('content'); ?>
+    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_category">Add new</button>
+    <form id="category_form">
+        <div id="add_category" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Add Sub Category</h5>
+                        <h5 class="modal-title">Add Category</h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Category Name:</label>
                                 <div class="col-lg-9">
-                                    <select name="category_name" class="form-control">
-                                        <option selected disabled hidden>Choose one</option>
-                                    @foreach($category as $value)
-                                    <option value="{{$value->category_id}}">{{$value->category_name}}</option>
-                                    @endforeach
-                                    </select>
-                                    <span class="text-danger" id="category_name"></span>
-                                </div>
-                            </div><br><br>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Sub Category Name:</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="sub_category_name" placeholder="Sub Category Name">
-                                    <span class="text-danger" id="sub_category_name"></span>
+                                    <input type="text" class="form-control" name="category_name" placeholder="Category Name">
                                 </div>
                             </div>
                             <br><br>
@@ -46,42 +32,31 @@
     </form>
     <br><br><br>
 
-    <form id="sub_category_update_form">
+    <form id="category_update_form">
         <div id="editModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Edit Sub Category</h5>
+                        <h5 class="modal-title">Edit Category</h5>
                     </div>
-                    <div class="panel-body">
+                    <div class="modal-body">
+                        <div class="panel-body">
                             <div class="form-group">
                                 <div class="col-lg-9">
-                                    <input type="hidden" class="form-control" id="sub_category_id" name="sub_category_id">
+                                    <input type="hidden" class="form-control" id="category_id" name="category_id">
                                 </div>
                             </div>
                             <br><br>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Category Name:</label>
                                 <div class="col-lg-9">
-                                    <select name="category_name" class="form-control" id="e_category_name">
-                                        <option selected disabled hidden>Choose one</option>
-                                    @foreach($category as $value)
-                                    <option value="{{$value->category_id}}">{{$value->category_name}}</option>
-                                    @endforeach
-                                    </select>
-                                    <span class="text-danger" id="u_category_name"></span>
-                                </div>
-                            </div><br><br>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Sub Category Name:</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="e_sub_category_name" name="sub_category_name" placeholder="Sub Category Name">
-                                    <span class="text-danger" id="u_sub_category_name"></span>
+                                    <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Category Name">
                                 </div>
                             </div>
                             <br><br>
                         </div>
+                    </div>
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-danger" id="close2" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Update</button>
@@ -90,12 +65,12 @@
             </div>
         </div>
     </form>
-
+    
     <div class="tabbable page-tabs">
         <div class="tab-content">
             <div class="tab-pane active fade in" id="inside">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h6 class="panel-title"><i class="icon-table"></i> View All Image</h6></div>
+                    <div class="panel-heading"><h6 class="panel-title"><i class="icon-table"></i> View All Data</h6></div>
                     <div class="datatable">
                         <div id="DataTables_Table_0_filter" class="dataTables_filter">
                             <label><span>Filter:</span>
@@ -118,7 +93,8 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-    <script type="text/javascript" src="{{asset('backend_assets/js/sub_category.js')}}"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('backend_assets/js/category.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('Backend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jubair/Desktop/Project/EBajar/resources/views/Backend/Admin/Category_Settings/Category/category.blade.php ENDPATH**/ ?>
