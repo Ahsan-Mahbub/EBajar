@@ -7,7 +7,7 @@
 				<ul>
 					<li class="{{ (request()->is('admin/division')) ? 'active' : '' }}" ><a href="{{ url('/admin/division')}}">Division</a></li>
 					<li class="{{ (request()->is('admin/district')) ? 'active' : '' }}" ><a href="{{ url('/admin/district')}}">District</a></li>
-					<li class="{{ (request()->is('admin/sub_district')) ? 'active' : '' }}" ><a href="{{ url('/admin/sub_district')}}">Sub District</a></li>
+					<li class="{{ (request()->is('admin/slider')) ? 'active' : '' }}" ><a href="{{ url('/admin/slider')}}">Slider</a></li>
 				</ul>
 			</li>
 			<li>
@@ -15,11 +15,8 @@
 				<ul>
 					<li class="{{ (request()->is('admin/category')) ? 'active' : '' }}" ><a href="{{ url('/admin/category')}}">Category</a></li>
 					<li class="{{ (request()->is('admin/sub_category')) ? 'active' : '' }}" ><a href="{{ url('/admin/sub_category')}}">Sub Category</a></li>
+					<li class="{{ (request()->is('admin/brand')) ? 'active' : '' }}" ><a href="{{ url('/admin/brand')}}">Brand</a></li>
 				</ul>
-			</li>
-			<li class="{{ (request()->is('admin/brand')) ? 'active' : '' }}" >
-				<a href="{{ url('/admin/brand')}}"><span>Brand</span><i class="icon-briefcase"></i></a>
-				
 			</li>
 			<li>
 				<a href="#"><span>Products</span><i class="icon-android"></i></a>

@@ -15,6 +15,19 @@
                     <div class="modal-body">
                         <div class="panel-body">
                             <div class="form-group">
+                                <label class="col-lg-3 control-label">Sub Category Name:</label>
+                                <div class="col-lg-9">
+                                    <select name="sub_category_name" class="form-control">
+                                        <option selected disabled hidden>Choose one</option>
+                                    @foreach($sub_category as $value)
+                                    <option value="{{$value->sub_category_id}}">{{$value->sub_category_name}}</option>
+                                    @endforeach
+                                    </select>
+                                    <span class="text-danger" id="sub_category_name"></span>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="form-group">
                                 <label class="col-lg-3 control-label">Brand Name:</label>
                                 <div class="col-lg-9">
                                     <input type="text" class="form-control" name="brand_name" placeholder="Brand Name">
