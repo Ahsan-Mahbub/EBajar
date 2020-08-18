@@ -27,46 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86a77c75-ba69-4380-8ab4-e4bf3ba57ecf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend_assets/js/password.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/Admin/Profile/password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Backend/Admin/Profile/profile.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/58BHWGWKNzEXYWXT9vxZ5p2qf8ZEEqiHL3YLa8ZM" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/RNL85bvrGqNqh20zF3VMAdJYyyFZ6dT3lVl75nGd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/pklxU75nvYSAjt8zR1QvXnWRqC4HK24L7Fc5Qc3q" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/039bace127ceaedd06569a2771dcb5151853c2d7.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/13c69f271429392e94d54c81f219596ac31c9c20.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/1687f1369fd9466f1ebe1063530960944a872e55.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/9bbab26acc9a8737209a1f14c97e6b8fda261ba3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/a57283dff4ffcfd027f1f0ddf9813bc98ce2016c.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/ac76e90b669f3e2bbfb88a348c85325f8c1d674b.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/d8a37bc559ff972c5d8efe37d0ad82689f143d2c.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/e59c082b911fa131ab37a832ce25ef2bc9cb4fef.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/f329a60288e2c7475f5a1458827ab1e49c83fa67.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/framework/views/f4589fa5bde6749d3bd567772e422dc79d3917b6.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/District.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/District.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ColorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ColorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DistrictController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DistrictController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_13_193138_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/backend_assets/js/color.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/backend_assets/js/color.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/backend_assets/js/district.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/backend_assets/js/district.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Backend/layouts/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/layouts/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/0cbwJM4wNoXtjrU95fObnlvqfoX2HHlK9HJ4CH8r" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/5sS6qzNsBhBjBw7ryEnUR53EymOh3AX9W0Ht6yEf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/JFdzWo6EHaVN3Kp8pjy1ehgwPyaRd4nzjF4Hs8Y5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/SpFABK3UjgP5v7PGmsbMqQdv1aonBucn1XM5gyZG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/iToVeRrIaQCtOYGWBWH5InwzDS75OEaSfqf6folo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/6c8a14dc3e1274c574d710119820ae4bb02e3526.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/6c8a14dc3e1274c574d710119820ae4bb02e3526.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/8d1ada78b43d7a729e06d38a67f9e0506275da09.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8d1ada78b43d7a729e06d38a67f9e0506275da09.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/8e47bd87928a9cf76e345dca09bc54960fdce36d.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8e47bd87928a9cf76e345dca09bc54960fdce36d.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +200,7 @@
       <workItem from="1597036564278" duration="11465000" />
       <workItem from="1597564149013" duration="26677000" />
       <workItem from="1597662901375" duration="13378000" />
-      <workItem from="1597722526256" duration="2093000" />
+      <workItem from="1597722526256" duration="2670000" />
     </task>
     <servers />
   </component>
