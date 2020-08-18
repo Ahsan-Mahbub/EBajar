@@ -10,14 +10,13 @@ class District extends Model
     protected $primaryKey = "district_id";
     protected $fillable = ["district_name", "division_name", "status"];
 
-//    public function validation()
-//    {
-//        return [
-//            'district_name' => 'required',
-//            'division_name' => 'required',
-//            'description' => 'required',
-//        ];
-//    }
+   public function validation()
+   {
+       return [
+           'district_name' => 'required',
+           'division_name' => 'required',
+       ];
+   }
 
     public function scopeSearch($query, $search)
     {

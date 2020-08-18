@@ -108,4 +108,4 @@ unset($__errorArgs, $__bag); ?>
 
 </body>
 </html>
-<?php /**PATH /home/kiri2ka/Laravel/Running Project/EBajar/resources/views/auth/login.blade.php ENDPATH**/ ?>
+<?php /**PATH /home/jubair/Desktop/Project/EBajar/resources/views/auth/login.blade.php ENDPATH**/ ?>

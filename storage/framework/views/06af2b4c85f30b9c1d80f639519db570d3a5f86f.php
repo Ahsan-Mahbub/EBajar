@@ -115,4 +115,4 @@ unset($__errorArgs, $__bag); ?>
 </div>
 </body>
 </html>
-<?php /**PATH /home/kiri2ka/Laravel/Running Project/EBajar/resources/views/auth/register.blade.php ENDPATH**/ ?>
+<?php /**PATH /home/jubair/Desktop/Project/EBajar/resources/views/auth/register.blade.php ENDPATH**/ ?>

@@ -7,7 +7,6 @@ use App\Category;
 use App\Http\Requests\SubCategoryRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use PhpParser\Node\Expr\AssignOp\Div;
 
 class SubCategoryController extends Controller
 {
