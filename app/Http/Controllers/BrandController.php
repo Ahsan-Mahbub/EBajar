@@ -1,7 +1,8 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
 use App\Brand;
+use App\SubCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Expr\AssignOp\Div;
@@ -15,7 +16,11 @@ class BrandController extends Controller
      */
     public function index()
     {
-        return view('Backend.Admin.Brand.brand');
+        $sub_category = SubCategory::active()->get();
+
+        return view('Backend.Admin.Brand.brand',[
+            'sub_category' => $sub_category,
+        ]);
     }
 
     /**
@@ -25,12 +30,7 @@ class BrandController extends Controller
      */
     public function create(Request $request)
     {
-        $brand = Brand::where(function ($category) use ($request) {
-        if ($request->search)
-        {
-            $category->where('brand_name', 'LIKE', '%' . $request->search . '%');
-        }
-        })->paginate(10);
+        $brand = Brand::search($request->search)->paginate(10);
         return view('Backend.Admin.Brand.list', ['brand' => $brand]);  
     }
 

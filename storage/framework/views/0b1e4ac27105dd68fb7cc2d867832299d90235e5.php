@@ -7,7 +7,7 @@
 				<ul>
 					<li class="<?php echo e((request()->is('admin/division')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/division')); ?>">Division</a></li>
 					<li class="<?php echo e((request()->is('admin/district')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/district')); ?>">District</a></li>
-					<li class="<?php echo e((request()->is('admin/sub_district')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/sub_district')); ?>">Sub District</a></li>
+					<li class="<?php echo e((request()->is('admin/slider')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/slider')); ?>">Slider</a></li>
 				</ul>
 			</li>
 			<li>
@@ -15,11 +15,8 @@
 				<ul>
 					<li class="<?php echo e((request()->is('admin/category')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/category')); ?>">Category</a></li>
 					<li class="<?php echo e((request()->is('admin/sub_category')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/sub_category')); ?>">Sub Category</a></li>
+					<li class="<?php echo e((request()->is('admin/brand')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/brand')); ?>">Brand</a></li>
 				</ul>
-			</li>
-			<li class="<?php echo e((request()->is('admin/brand')) ? 'active' : ''); ?>" >
-				<a href="<?php echo e(url('/admin/brand')); ?>"><span>Brand</span><i class="icon-briefcase"></i></a>
-				
 			</li>
 			<li>
 				<a href="#"><span>Products</span><i class="icon-android"></i></a>
