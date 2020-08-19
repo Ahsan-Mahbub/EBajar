@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function () { 
 	datalist()
     let max_field = 3;
     let i = 1;
@@ -45,6 +45,9 @@ $(document).ready(function () {
                 $("#sub_category_name").html(b);
             }
         })
+    });
+    $(document).on('change','#sub_category_name', function(){
+        ;
     });
 
     $("#data_lists").on("click", ".page-link", function(e) {

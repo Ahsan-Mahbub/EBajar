@@ -1,4 +1,4 @@
-@extends('Backend.layouts.main')
+@extends('Backend.layouts.main') 
 @section('title', '|| Product')
 @section('head', 'Product') 
 @section('head_name', 'Product')
@@ -22,15 +22,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Sub Category:</label>
+                    <label class="col-sm-2 control-label">sub Category:</label>
                     <div class="col-sm-10">
                         <select class="select-full" name="sub_category_name" id="sub_category_name">
-                                <option value="" selected>Select One</option>
-                                
-                            </select>
-                                @if($errors->first('sub_category_name'))
-                                <label for="sub_category_name" class="error">{{$errors->first('sub_category')}}</label>
-                                @endif
+                            <option value="" selected>Select One</option>
+                        </select>
+                        @if($errors->first('sub_category_name'))
+                            <label for="sub_category_name" class="error">{{$errors->first('sub_category_name')}}</label>
+                        @endif
                     </div>
                 </div>
 

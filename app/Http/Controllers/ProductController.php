@@ -1,7 +1,7 @@
 <?php 
 
 namespace App\Http\Controllers;
-
+ 
 use App\Product; 
 use App\ProductImages;
 use App\Category; 
@@ -48,13 +48,19 @@ class ProductController extends Controller
         return ProductCollection::collection($sub_category);
     }
 
+    public function sub_category($sub_category_id)
+    {
+        $brand = SubCategory::where('sub_category_name', $sub_category_id)->get();
+        return ProductCollection::collection($brand);
+    }
+
+
     public function list(Request $request)
     {
         $product = Product::search($request->search)->paginate(10);
         return view('Backend.Admin.Product.list', [
             'product' => $product,
         ]);
-    echo "i am noob";
     }
 
 
