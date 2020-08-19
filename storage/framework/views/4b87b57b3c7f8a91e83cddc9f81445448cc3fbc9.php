@@ -1,3 +1,4 @@
+ 
 <?php $__env->startSection('title', '|| Product'); ?>
 <?php $__env->startSection('head', 'Product'); ?> 
 <?php $__env->startSection('head_name', 'Product'); ?>
@@ -21,16 +22,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Sub Category:</label>
-                    <div class="col-sm-10">
-                        <select class="select-full" name="sub_category_name" id="sub_category_name">
+                        <label class="col-sm-2 control-label">sub Category:</label>
+                        <div class="col-sm-10">
+                            <select class="select-full" name="sub_category_name" id="sub_category_name">
                                 <option value="" selected>Select One</option>
-                                
                             </select>
-                                <?php if($errors->first('sub_category_name')): ?>
-                                <label for="sub_category_name" class="error"><?php echo e($errors->first('sub_category')); ?></label>
-                                <?php endif; ?>
-                    </div>
+                            <?php if($errors->first('sub_category_name')): ?>
+                                <label for="sub_category_name" class="error"><?php echo e($errors->first('sub_category_name')); ?></label>
+                            <?php endif; ?>
+                        </div>
                 </div>
 
                 <div class="form-group">

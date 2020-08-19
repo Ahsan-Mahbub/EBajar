@@ -48,6 +48,7 @@ Route::prefix('admin')->group(function(){
         //Product
         Route::resource('/product', 'ProductController');
         Route::get('/product/category/{category_id}', 'ProductController@category');
+        Route::get('/product/sub_category/{sub_category_id}', 'ProductController@sub_category');
         Route::get('/list', 'ProductController@list');
         Route::post('/product/store', 'ProductController@store');
         Route::post('/product/update', 'ProductController@update');
