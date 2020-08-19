@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
+Route::get('/', 'FrontEndController@index');
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
 Route::get('/admin', 'HomeController@index');
 Route::prefix('admin')->group(function(){
     Route::middleware('auth')->group(function () {
