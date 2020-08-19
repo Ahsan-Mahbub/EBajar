@@ -1,7 +1,6 @@
-@extends('Backend.layouts.main')
-@section('title', '|| Password Change')
-@section('head_name', 'Password Change')
-@section('content')
+<?php $__env->startSection('title', '|| Password Change'); ?>
+<?php $__env->startSection('head_name', 'Password Change'); ?>
+<?php $__env->startSection('content'); ?>
 
 <form id="password">
     <div class="modal-dialog">
@@ -36,7 +35,8 @@
             </div>
     </div>
 </form>
-@endsection
-@section('script')
-    <script type="text/javascript" src="{{asset('backend_assets/js/password.js')}}"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('backend_assets/js/password.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('Backend.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/jubair/Desktop/Project/EBajar/resources/views/Backend/Admin/Profile/password.blade.php ENDPATH**/ ?>

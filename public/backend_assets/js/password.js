@@ -46,3 +46,20 @@ $(document).ready(function(){
 
         });
 });
+
+$("#password").submit(function(e) {
+    e.preventDefault();
+    var password = $("#r_password").val();
+
+    $.ajax({
+        url: "password/store",
+        data: {password:password},
+        type: "post",
+        dataType: "json",
+        success: function(data) {
+            if(data.status=="201") {
+              window.location.replace("/admin");
+            }
+        }  
+    });
+});
