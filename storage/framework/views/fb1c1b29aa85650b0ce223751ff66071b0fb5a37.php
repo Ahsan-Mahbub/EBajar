@@ -3,11 +3,19 @@
 		<ul class="navigation">
 			<li class="<?php echo e((request()->is('admin')) ? 'active' : ''); ?>"><a href="<?php echo e(url('/admin')); ?>"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
 			<li>
+				<a href="#"><span>Account Settings</span><i class="icon-user4"></i></a>
+				<ul>
+					<li><a href="form_components.html">Form components</a></li>
+					<li><a href="form_layouts.html">Form layouts</a></li>
+				</ul>
+			</li>
+			<li>
 				<a href="#"><span>Address Settings</span><i class="icon-location4"></i></a>
 				<ul>
 					<li class="<?php echo e((request()->is('admin/division')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/division')); ?>">Division</a></li>
 					<li class="<?php echo e((request()->is('admin/district')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/district')); ?>">District</a></li>
-					<li class="<?php echo e((request()->is('admin/slider')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/slider')); ?>">Slider</a></li>
+					<li class="<?php echo e((request()->is('admin/sub_district')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/sub_district')); ?>">Sub District</a></li>
+					<li><a href="form_layouts.html">Form layouts</a></li>
 				</ul>
 			</li>
 			<li>
@@ -15,11 +23,15 @@
 				<ul>
 					<li class="<?php echo e((request()->is('admin/category')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/category')); ?>">Category</a></li>
 					<li class="<?php echo e((request()->is('admin/sub_category')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/sub_category')); ?>">Sub Category</a></li>
-					<li class="<?php echo e((request()->is('admin/brand')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/brand')); ?>">Brand</a></li>
 				</ul>
+			</li>
+			<li class="<?php echo e((request()->is('admin/brand')) ? 'active' : ''); ?>" >
+				<a href="<?php echo e(url('/admin/brand')); ?>"><span>Brand</span><i class="icon-briefcase"></i></a>
+
 			</li>
             <li class="<?php echo e((request()->is('admin/color')) ? 'active' : ''); ?>" >
                 <a href="<?php echo e(route('color.index')); ?>"><span>color</span><i class="icon-balloon"></i></a>
+
             </li>
 			<li>
 				<a href="#"><span>Products</span><i class="icon-android"></i></a>
@@ -36,4 +48,4 @@
 		</ul>
 	</div>
 </div>
-<?php /**PATH /home/kiri2ka/Laravel/Running Project/EBajar/resources/views/Backend/layouts/sidebar.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\Laravel\EBajar\resources\views/Backend/layouts/sidebar.blade.php ENDPATH**/ ?>
