@@ -1,4 +1,4 @@
-<div class="sidebar"> 
+<div class="sidebar">
 	<div class="sidebar-content">
 		<ul class="navigation">
 			<li class="{{ (request()->is('admin')) ? 'active' : '' }}"><a href="{{ url('/admin') }}"><span>Dashboard</span> <i class="icon-screen2"></i></a></li>
@@ -18,17 +18,20 @@
 					<li class="{{ (request()->is('admin/brand')) ? 'active' : '' }}" ><a href="{{ url('/admin/brand')}}">Brand</a></li>
 				</ul>
 			</li>
+            <li class="{{ (request()->is('admin/color')) ? 'active' : '' }}" >
+                <a href="{{ route('color.index')}}"><span>color</span><i class="icon-balloon"></i></a>
+            </li>
 			<li>
 				<a href="#"><span>Products</span><i class="icon-android"></i></a>
 				<ul>
 					<li class="{{ (request()->is('admin/product/create')) ? 'active' : '' }}" ><a href="{{ url('/admin/product/create')}}">Add Product</a></li>
 					<li class="{{ (request()->is('admin/product')) ? 'active' : '' }}" ><a href="{{ url('/admin/product')}}">Product List</a></li>
-					
+
 				</ul>
 			</li>
 			<li class="{{ (request()->is('admin/slider')) ? 'active' : '' }}" >
 				<a href="{{ url('/admin/slider')}}"><span>Slider</span><i class="icon-archive"></i></a>
-				
+
 			</li>
 		</ul>
 	</div>
