@@ -30,18 +30,8 @@ class BrandController extends Controller
      */
     public function create(Request $request)
     {
-<<<<<<< HEAD
         $brand = Brand::search($request->search)->paginate(10);
         return view('Backend.Admin.Brand.list', ['brand' => $brand]);  
-=======
-        $brand = Brand::where(function ($category) use ($request) {
-        if ($request->search)
-        {
-            $category->where('brand_name', 'LIKE', '%' . $request->search . '%');
-        }
-        })->paginate(10);
-        return view('Backend.Admin.Brand.list', ['brand' => $brand]);
->>>>>>> a67a023730afb954ec298a3e8c4fea028285822f
     }
 
 
