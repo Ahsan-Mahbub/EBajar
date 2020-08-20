@@ -2,6 +2,7 @@
     <thead>
     <tr>
         <th>#</th>
+        <th>Sub Category</th>
         <th>Brand Name</th>
         <th>Description</th>
         <th>Status</th>
@@ -12,6 +13,10 @@
     @foreach($brand as $key => $value)
         <tr>
             <td>{{$key+1}}</td>
+            <td>
+                @php $sub_category_data = collect($sub_category)->where('sub_category_id', $value->sub_category_name)->first() @endphp
+                {{$sub_category_data->sub_category_name}}
+            </td>
             <td>{{$value->brand_name}}</td>
             <td>{{$value->description}}</td>
             <td>

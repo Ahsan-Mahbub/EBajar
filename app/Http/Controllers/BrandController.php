@@ -1,7 +1,9 @@
 <?php 
 
 namespace App\Http\Controllers;
+
 use App\Brand;
+use App\Category;
 use App\SubCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -16,9 +18,10 @@ class BrandController extends Controller
      */
     public function index()
     {
+        $brand = Brand::all();
         $sub_category = SubCategory::active()->get();
-
-        return view('Backend.Admin.Brand.brand',[
+        return view('Backend.Admin.Brand.brand', [
+            'brand' => $brand,
             'sub_category' => $sub_category,
         ]);
     }
@@ -30,8 +33,12 @@ class BrandController extends Controller
      */
     public function create(Request $request)
     {
+        $sub_category = SubCategory::active()->get();
         $brand = Brand::search($request->search)->paginate(10);
-        return view('Backend.Admin.Brand.list', ['brand' => $brand]);  
+        return view('Backend.Admin.Brand.list', [
+            'brand' => $brand,
+            'sub_category' => $sub_category
+        ]);
     }
 
 

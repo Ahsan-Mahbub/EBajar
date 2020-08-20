@@ -41,7 +41,7 @@ Route::prefix('admin')->group(function(){
         Route::post('/brand/store', 'BrandController@store');
         Route::post('/brand/update', 'BrandController@update');
         Route::get('/brand/show/{id}', 'BrandController@show');
-        //color
+        //Color
         Route::get('showlist' , 'ColorController@datalist');
         Route::resource('/color', 'ColorController');
         Route::post('/color/store' , 'ColorController@store');
