@@ -1,3 +1,4 @@
+ 
 <?php $__env->startSection('title', '|| Brand'); ?>
 <?php $__env->startSection('head', 'Brand'); ?>
 <?php $__env->startSection('head_name', 'Brand'); ?>
@@ -13,6 +14,19 @@
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Sub Category Name:</label>
+                                <div class="col-lg-9">
+                                    <select name="sub_category_name" class="form-control">
+                                        <option selected disabled hidden>Choose one</option>
+                                    <?php $__currentLoopData = $sub_category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value="<?php echo e($value->sub_category_id); ?>"><?php echo e($value->sub_category_name); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
+                                    <span class="text-danger" id="sub_category_name"></span>
+                                </div>
+                            </div>
+                            <br><br>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Brand Name:</label>
                                 <div class="col-lg-9">

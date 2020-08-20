@@ -2,6 +2,7 @@
     <thead>
     <tr>
         <th>#</th>
+        <th>Sub Category</th>
         <th>Brand Name</th>
         <th>Description</th>
         <th>Status</th>
@@ -12,6 +13,11 @@
     <?php $__currentLoopData = $brand; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
             <td><?php echo e($key+1); ?></td>
+            <td>
+                <?php $sub_category_data = collect($sub_category)->where('sub_category_id', $value->sub_category_name)->first() ?>
+                <?php echo e($sub_category_data->sub_category_name); ?>
+
+            </td>
             <td><?php echo e($value->brand_name); ?></td>
             <td><?php echo e($value->description); ?></td>
             <td>

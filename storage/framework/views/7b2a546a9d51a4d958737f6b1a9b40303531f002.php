@@ -4,7 +4,6 @@
         <th>#</th>
         <th>Category Name</th>
         <th>Sub Category Name</th>
-        <th>Brand Name</th>
         <th>Status</th>
         <th>Action</th>
     </tr>
@@ -19,11 +18,6 @@
 
             </td>
             <td><?php echo e($value->sub_category_name); ?></td>
-            <td>
-                <?php $brand_data = collect($brand)->where('brand_id', $value->brand_name)->first() ?>
-                <?php echo e($brand_data->brand_name); ?>
-
-            </td>
             <td>
                 <?php if($value->status == 1): ?>
                     <span class="text-success">Active</span>

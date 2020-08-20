@@ -30,7 +30,28 @@ $(document).ready(function () {
         i--;
     });
 
-    $(document).on('change', '#category_name', function () {
+    // $(document).on('change', '#category_name', function () {
+    //     let data = $(this).val();
+
+    //     $.ajax({
+    //         url: "/admin/product/category/" + data,
+    //         type: "get",
+    //         dataType: "json",
+    //         success: function (response) {
+    //             let b = $();
+    //             $.each(response.data, function (i, item) {
+    //                 b = b.add("<option value=" + item.sub_category_id + ">" + item.sub_category_name + "</option>")
+    //             });
+    //             $("#sub_category_name").html(b);
+    //         }
+    //     })
+    // });
+    // $(document).on('change','#sub_category_name', function(){
+    //     ;
+    // });
+
+
+   $(document).on('change', '#category_name', function () {
         let data = $(this).val();
 
         $.ajax({
@@ -42,12 +63,28 @@ $(document).ready(function () {
                 $.each(response.data, function (i, item) {
                     b = b.add("<option value=" + item.sub_category_id + ">" + item.sub_category_name + "</option>")
                 });
+                console.log("#sub_category_name");
                 $("#sub_category_name").html(b);
             }
         })
     });
-    $(document).on('change','#sub_category_name', function(){
-        ;
+
+   $(document).on('change', '#sub_category_name', function () {
+        let data = $(this).val();
+
+        $.ajax({
+            url: "/admin/product/sub_category/" + data,
+            type: "get",
+            dataType: "json",
+            success: function (response) {
+                let b = $();
+                $.each(response.data, function (i, item) {
+                    b = b.add("<option value=" + item.brand_id + ">" + item.brand_name + "</option>")
+                });
+                console.log("#brand_name");
+                $("#brand_name").html(b);
+            }
+        })
     });
 
     $("#data_lists").on("click", ".page-link", function(e) {
