@@ -22,12 +22,11 @@
 				<ul class="dropdown-menu dropdown-menu-right icons-right">
 
 					<li class="<?php echo e((request()->is('admin/profile')) ? 'active' : ''); ?>"><a href="<?php echo e(url('/admin/profile')); ?>"><i class="icon-user"></i> Profile Change</a></li>
-					
-						<form  action="<?php echo e(route('logout')); ?>" method="POST">
-		                    <?php echo csrf_field(); ?>
-		                    <button><i class="icon-exit"></i> Logout</button>
-		                </form>
-					</li>
+					<li class="<?php echo e((request()->is('admin/password')) ? 'active' : ''); ?>"><a href="<?php echo e(url('/admin/password')); ?>"><i class="icon-user"></i> Password Change</a></li>
+
+					<li><a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                        onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="icon-exit"></i>Logout</a></li>
+                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;"><?php echo csrf_field(); ?></form>
 				</ul>
 			</li>
 		</ul>

@@ -19,7 +19,7 @@
 				</ul>
 			</li>
             <li class="<?php echo e((request()->is('admin/color')) ? 'active' : ''); ?>" >
-                <a href="<?php echo e(route('color.index')); ?>"><span>color</span><i class="icon-balloon"></i></a>
+                <a href="<?php echo e(route('color.index')); ?>"><span>Color</span><i class="icon-balloon"></i></a>
             </li>
 			<li>
 				<a href="#"><span>Products</span><i class="icon-android"></i></a>

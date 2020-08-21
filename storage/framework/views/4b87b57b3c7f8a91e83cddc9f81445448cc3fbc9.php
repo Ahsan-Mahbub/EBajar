@@ -9,40 +9,41 @@
         <div class="panel panel-default">
             <div class="panel-heading"><h6 class="panel-title">Basic Info</h6></div>
             <div class="panel-body">
+                
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Category:</label>
                     <div class="col-sm-10">
                         <select class="select-full" name="category_name" id="category_name">
-                            <option value="" selected>Select One</option>
+                                <option value="" selected>Select One</option>
                                 <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e($value->category_id); ?>"><?php echo e($value->category_name); ?></option>
+                                <option value="<?php echo e($value->category_id); ?>"><?php echo e($value->category_name); ?></option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </select>
+                            </select>
+                            <?php if($errors->first('category_name')): ?>
+                                <label for="category_name" class="error"><?php echo e($errors->first('category_name')); ?></label>
+                            <?php endif; ?>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">sub Category:</label>
+                    <label class="col-sm-2 control-label">Sub Category:</label>
                     <div class="col-sm-10">
                         <select class="select-full" name="sub_category_name" id="sub_category_name">
-                            <option value="" selected>Select One</option>
-                        </select>
-                        <?php if($errors->first('sub_category_name')): ?>
-                            <label for="sub_category_name" class="error"><?php echo e($errors->first('sub_category_name')); ?></label>
-                        <?php endif; ?>
+                                <option value="" selected>Select One</option>
+                            </select>
+                            <?php if($errors->first('sub_category_name')): ?>
+                                <label for="sub_category_name" class="error"><?php echo e($errors->first('sub_category_name')); ?></label>
+                            <?php endif; ?>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Brand:</label>
                     <div class="col-sm-10">
-                        <select class="select-full" name="brand_name" id="brand_name">
+                            <select class="select-full" name="brand_name" id="brand_name">
                                 <option value="" selected>Select One</option>
-                                <?php $__currentLoopData = $brand; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option value="<?php echo e($value->brand_id); ?>"><?php echo e($value->brand_name); ?></option>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
-                                <?php if($errors->first('brand_name')): ?>
+                            <?php if($errors->first('brand_name')): ?>
                                 <label for="brand_name" class="error"><?php echo e($errors->first('brand_name')); ?></label>
                             <?php endif; ?>
                     </div>
@@ -51,7 +52,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Product Name:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="product_name" id="product_name" placeholder="product name">
+                        <input type="text" class="form-control" name="product_name" id="product_name" placeholder="Product name">
                             <?php if($errors->first('product_name')): ?>
                                 <label for="product_name" class="error"><?php echo e($errors->first('product_name')); ?></label>
                                 <?php endif; ?>
@@ -59,7 +60,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Prize::</label>
+                    <label class="col-sm-2 control-label">Price:</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="product_prize" name="product_prize" placeholder="Product prize ()">
                             <?php if($errors->first('product_prize')): ?>

@@ -23,7 +23,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('Backend.Admin.Product.product_list');  
+        return view('Backend.Admin.Product.product_list');
+
+        // $product = Product::all();
+        // return view('Backend.Admin.Product.product_list', [
+        //     'product' => $product,
+        // ]);
     }
 
     /**
@@ -33,24 +38,43 @@ class ProductController extends Controller
      */
     public function create()
     {
+        // $category = Category::all();
+        // $sub_category = SubCategory::all();
+        // $brand = Brand::all();
+        // return view('Backend.Admin.Product.product', [
+        //     'category' => $category,
+        //     'sub_category' => $sub_category,
+        //     'brand' => $brand
+        // ]);
+
         $category = Category::all();
         $sub_category = SubCategory::all();
         $brand = Brand::all();
         return view('Backend.Admin.Product.product', [
             'category' => $category,
             'sub_category' => $sub_category,
-            'brand' => $brand
+            'brand' => $brand,
         ]);
+
+        // $category = Category::all();
+        // $sub_category = SubCategory::all();
+        // $brand = Brand::all();
+
+        // return view('Backend.Admin.Product.product', [
+        //     'category' => $category,
+        //     'sub_category' => $sub_category,
+        //     'brand' => $brand,
+        // ]);
     }
     public function category($category_id)
     {
-        $sub_category = Category::where('category_name', $category_id)->get();
+        $sub_category = SubCategory::where('category_name', $category_id)->get();
         return ProductCollection::collection($sub_category);
     }
 
     public function sub_category($sub_category_id)
     {
-        $brand = SubCategory::where('sub_category_name', $sub_category_id)->get();
+        $brand = Brand::where('sub_category_name', $sub_category_id)->get();
         return ProductCollection::collection($brand);
     }
 

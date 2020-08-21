@@ -41,7 +41,7 @@ Route::prefix('admin')->group(function(){
         Route::post('/brand/store', 'BrandController@store');
         Route::post('/brand/update', 'BrandController@update');
         Route::get('/brand/show/{id}', 'BrandController@show');
-        //color
+        //Color
         Route::get('showlist' , 'ColorController@datalist');
         Route::resource('/color', 'ColorController');
         Route::post('/color/store' , 'ColorController@store');
@@ -62,7 +62,10 @@ Route::prefix('admin')->group(function(){
         Route::get('/product/show/{id}', 'ProductController@show');
         //Profile
         Route::resource('/profile', 'ProfileController');
-        Route::get('/pass', 'ProfileController@password')->name('password');
+        Route::resource('/password', 'PasswordController');
+        Route::post('password/store', 'PasswordController@store');
+        Route::get('pass', 'PasswordController@password')->name('password');
+
 
 
     });

@@ -22,12 +22,11 @@
 				<ul class="dropdown-menu dropdown-menu-right icons-right">
 
 					<li class="{{ (request()->is('admin/profile')) ? 'active' : '' }}"><a href="{{url('/admin/profile')}}"><i class="icon-user"></i> Profile Change</a></li>
-					
-						<form  action="{{ route('logout') }}" method="POST">
-		                    @csrf
-		                    <button><i class="icon-exit"></i> Logout</button>
-		                </form>
-					</li>
+					<li class="{{ (request()->is('admin/password')) ? 'active' : '' }}"><a href="{{url('/admin/password')}}"><i class="icon-user"></i> Password Change</a></li>
+
+					<li><a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="icon-exit"></i>Logout</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
 				</ul>
 			</li>
 		</ul>

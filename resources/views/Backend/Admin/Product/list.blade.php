@@ -4,7 +4,7 @@
         <th>#</th>
         <th>Name</th>
         <th>Quantity</th>
-        <th>Prize</th>
+        <th>Price</th>
         <th>Status</th>
         <th>Action</th>
     </tr>
