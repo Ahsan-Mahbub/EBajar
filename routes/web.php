@@ -62,7 +62,10 @@ Route::prefix('admin')->group(function(){
         Route::get('/product/show/{id}', 'ProductController@show');
         //Profile
         Route::resource('/profile', 'ProfileController');
-        Route::get('/pass', 'ProfileController@password')->name('password');
+        Route::resource('/password', 'PasswordController');
+        Route::post('password/store', 'PasswordController@store');
+        Route::get('pass', 'PasswordController@password')->name('password');
+
 
 
     });

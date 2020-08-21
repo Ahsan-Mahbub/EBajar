@@ -1,23 +1,14 @@
 <?php 
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Requests\ProfileRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use File;
-use Toastr;
-use App\Traits\FileVerifyUpload;
 use DB;
-
-
-
 class ProfileController extends Controller
 {
-    use FileVerifyUpload;
-
     /**
      * Display a listing of the resource.
      *
@@ -37,18 +28,7 @@ class ProfileController extends Controller
     {
         
     }
-    public function password(Request $request)
-    {
-        $match=hash::check($request->current_password,Auth::user()->password);
-        if ($match) 
-        {
-            echo "Matched";
-        }
-        else
-        {
-            echo "error";
-        }
-    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -56,20 +36,39 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProfileRequest $request)
+    public function store(Request $request)
     {
-        $profile=new User();
-        $profile->image=$this->ImageVerifyUpload($request,'image','backend_assets/images/BackendImg/Porfile/','Profile');
-        $profile->name=$request->name;
-        $profile->contact=$request->contact;
-        $profile->gender=$request->gender;
-        $profile->save();
-        $status=201;
-        $response=[
-                'status'=>$status,
-                'message'=>'Successfully Updated',
+        $request->validate([
+            'name'   => 'required',
+            'gender' => 'required',
+            'contact'=> 'required',
+            'image'=> 'mimes:png,jpg,jpeg',
+        ]);
+        if($request->hasFile('image')) {
+            if($request->old_img!=''){
+                unlink($request->old_img);
+            }
+            $image_type = $request->file('image')->getClientOriginalExtension();
+            $path = "backend_assets/images/BackendImg/User/";
+            $name = 'user_'.time().".".$image_type;
+            $image = $request->file('image')->move($path,$name);
+            
+            $data = [
+                'name'   => $request->name,
+                'gender' => $request->gender,
+                'contact'=> $request->contact,
+                'image'  => $image
             ];
-        return response()->json($response,$status);
+        } else {
+            $data = [
+                'name'   => $request->name,
+                'gender' => $request->gender,
+                'contact'=> $request->contact
+            ];
+        }
+        
+        User::where('id', Auth::user()->id)->update($data);
+        return back();
     }
 
     /**

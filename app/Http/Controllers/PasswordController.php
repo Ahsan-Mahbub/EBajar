@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\User;
 use Illuminate\Http\Request;
+use DB;
+
 
 class PasswordController extends Controller
 {
@@ -19,20 +21,27 @@ class PasswordController extends Controller
         return view('Backend.Admin.Profile.password');
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function password(Request $request)
     {
-        $password = $request->c_password;
-        $match = Hash::check($password, Auth::user()->password);
-        if($match) {
-            echo "matched";
-        } else {
+        $match=hash::check($request->current_password,Auth::user()->password);
+        if ($match) 
+        {
+            echo "Matched";
+        }
+        else
+        {
             echo "error";
         }
+    }
+    public function create(Request $request)
+    {
+        //
     }
 
     /**
@@ -43,25 +52,15 @@ class PasswordController extends Controller
      */
     public function store(Request $request)
     {
-
         $data = [
             'password' => Hash::make($request->password)
         ];
         User::where('id', Auth::user()->id)->update($data);
-        $status=201;
         $response = [
-            'status'=>$status,
+            'msgtype' => 'success',
             'message' => 'Password Change Successfully'
         ];
         echo json_encode($response);
-
-
-        // $status=201;
-        // $response=[
-        //         'status'=>$status,
-        //         'message'=>'Successfully Inserted',
-        //     ];
-        // return response()->json($response,$status);
     }
 
     /**
