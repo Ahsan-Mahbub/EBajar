@@ -100,7 +100,7 @@
             </ul>
           </li> -->
           <!-- <li><a href="#contact">Contact</a></li> -->
-          <li><a href="/admin">Admin &nbsp; &nbsp;</a></li>
+          <li><a href="/admin">Admin</a></li>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
           <div class="tw-w-2/4 lg:tw-w-3/12 "><input type="text" id="search_in" name="" placeholder="Search for products"></div>
         </ul>
       </nav><!-- .nav-menu -->

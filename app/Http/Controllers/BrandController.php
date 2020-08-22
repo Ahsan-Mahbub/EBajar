@@ -39,6 +39,7 @@ class BrandController extends Controller
      */
     public function create(Request $request)
     {
+<<<<<<< HEAD
         // $brand = Brand::search($request->search)->paginate(10);
         // return view('Backend.Admin.Brand.list', ['brand' => $brand]);
 
@@ -64,6 +65,10 @@ class BrandController extends Controller
             'sub_category' => $sub_category
         ]);
 
+=======
+        $brand = Brand::search($request->search)->paginate(10);
+        return view('Backend.Admin.Brand.list', ['brand' => $brand]);  
+>>>>>>> ee0051ef8dad8ca5c76a41d51159597f5bfa126e
     }
 
 
