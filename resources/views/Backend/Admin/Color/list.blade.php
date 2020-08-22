@@ -2,9 +2,9 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>Brand Name</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th>{{ __('color.brand_name') }}</th>
+        <th>{{ __('color.Status') }}</th>
+        <th>{{ __('color.Action') }}</th>
     </tr>
     </thead>
     <tbody>

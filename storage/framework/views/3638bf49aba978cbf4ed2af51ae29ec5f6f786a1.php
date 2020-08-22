@@ -2,9 +2,9 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>Brand Name</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th><?php echo e(__('color.brand_name')); ?></th>
+        <th><?php echo e(__('color.Status')); ?></th>
+        <th><?php echo e(__('color.Action')); ?></th>
     </tr>
     </thead>
     <tbody>
