@@ -8,6 +8,7 @@ use App\SubCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Expr\AssignOp\Div;
+use ShakilAhmmed\Path\Path;
 
 class BrandController extends Controller
 {
@@ -18,11 +19,14 @@ class BrandController extends Controller
      */
     public function index()
     {
+        $division=Path::getDivisions();
+        //dd($division);
         $brand = Brand::all();
         $sub_category = SubCategory::active()->get();
         return view('Backend.Admin.Brand.brand', [
             'brand' => $brand,
             'sub_category' => $sub_category,
+            'division' => $division,
         ]);
     }
 

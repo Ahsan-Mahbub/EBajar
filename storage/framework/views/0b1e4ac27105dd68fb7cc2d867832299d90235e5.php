@@ -7,7 +7,7 @@
 				<ul>
 					<li class="<?php echo e((request()->is('admin/division')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/division')); ?>">Division</a></li>
 					<li class="<?php echo e((request()->is('admin/district')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/district')); ?>">District</a></li>
-					<li class="<?php echo e((request()->is('admin/slider')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/slider')); ?>">Slider</a></li>
+					<li class="<?php echo e((request()->is('admin/brand')) ? 'active' : ''); ?>" ><a href="<?php echo e(url('/admin/brand')); ?>">Brand</a></li>
 				</ul>
 			</li>
 			<li>
