@@ -2,7 +2,7 @@
 <?php $__env->startSection('head', 'Color'); ?>
 <?php $__env->startSection('head_name', 'Color'); ?>
 <?php $__env->startSection('content'); ?>
-    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_color">Add new</button>
+    <button style="float: right" class="btn btn-info" data-toggle="modal" data-target="#add_color"><?php echo e(__('color.add_new')); ?></button>
     <br><br><br>
 
     <form id="Color_form" enctype="multipart/form-data">
@@ -12,14 +12,14 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">Add Color</h5>
+                        <h5 class="modal-title"><?php echo e(__('color.add_color')); ?></h5>
                     </div>
                     <div class="modal-body">
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Color Name:</label>
+                                <label class="col-lg-3 control-label"><?php echo e(__('color.color_name')); ?></label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="color_name" placeholder="Enter Color Name">
+                                    <input type="text" class="form-control" name="color_name" placeholder="<?php echo e(__('color.Enter_color_name')); ?>">
                                 </div>
                             </div>
                             <br><br>
@@ -29,8 +29,8 @@
                         <br>
                     </div>
                     <div class="modal-footer">
-                        <button type="reset" class="btn btn-danger" id="close" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="reset" class="btn btn-danger" id="close" data-dismiss="modal"><?php echo e(__('color.close')); ?></button>
+                        <button type="submit" class="btn btn-primary"><?php echo e(__('color.save')); ?></button>
                     </div>
                 </div>
             </div>
@@ -43,15 +43,15 @@
         <div class="tab-content">
             <div class="tab-pane active fade in" id="inside">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h6 class="panel-title"><i class="icon-table"></i> View All Data</h6></div>
+                    <div class="panel-heading"><h6 class="panel-title"><i class="icon-table"></i><?php echo e(__('color.view_all_data')); ?></h6></div>
                     <div class="datatable">
                         <div id="DataTables_Table_0_filter" class="dataTables_filter">
-                            <label><span>Filter:</span>
+                            <label><span><?php echo e(__('color.Filter')); ?></span>
                                 <input type="search" class="search" aria-controls="DataTables_Table_0" placeholder="Type to filter...">
                             </label>
                         </div>
                         <div class="dataTables_length" id="DataTables_Table_0_length">
-                            <label><span>Show:</span>
+                            <label><span><?php echo e(__('color.Show')); ?></span>
                                 <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="select2-offscreen" tabindex="-1" title="">
                                     <option value="10">10</option>
                                     <option value="25">25</option>
@@ -75,7 +75,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h5 class="modal-title">EDIT Color</h5>
+                        <h5 class="modal-title"><?php echo e(__('color.edit_color')); ?></h5>
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
@@ -92,8 +92,8 @@
                         <br><br>
                     </div>
                     <div class="modal-footer">
-                        <button type="reset" class="btn btn-danger" id="close2" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="reset" class="btn btn-danger" id="close2" data-dismiss="modal"><?php echo e(__('color.close')); ?></button>
+                        <button type="submit" class="btn btn-primary"><?php echo e(__('color.update')); ?></button>
                     </div>
                 </div>
             </div>

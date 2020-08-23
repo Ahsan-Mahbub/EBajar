@@ -11,6 +11,10 @@ Route::get('/', 'FrontEndController@index');
 Route::get('/admin', 'HomeController@index');
 Route::prefix('admin')->group(function(){
     Route::middleware('auth')->group(function () {
+        Route::get('/locale/{locale}',function ($locale) {
+            Session::put('locale',$locale);
+            Return redirect()->back();
+        });
     	//Division
         Route::resource('/division', 'DivisionController');
         Route::post('/division/store', 'DivisionController@store');

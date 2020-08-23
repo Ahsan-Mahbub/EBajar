@@ -27,7 +27,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86a77c75-ba69-4380-8ab4-e4bf3ba57ecf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Localization.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend_assets/images/flags/bangladesh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/bn/color.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/color.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/GyIRBVGKEKodeVBrZ3xnIprXB7twpKRfBnZYWryT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/LOfAthrJ4h5drFrw9nXslCyTdedG6bKqSN86yvtS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/PFG1x0LKvPcDbFpNd4HgN93dp5zwbmjhclNH6tBT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/sessions/U7OM7HNwZiM2zOIP0LFFc0Jpb9DvLHq0HCGkZ5ce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/128339bc3ee9baba75ca638dffc6a095a1fcb8a7.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/45de177faac80028f9658cfa62cf21a0932589ad.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/48a70f73aeb476f55fdf397968f6bd4ea788ca15.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/4945d588fc004dcee3191d237c1cc1fcf8c4e7c8.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/76b314668946330f73203c5653e369934fa5f0c0.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/81baaca69294c9ae6f55618d428913ac0862d679.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/928138e7aa48861fa476a898d159dcc3ac98dd1a.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/9cba1ad06cfaf4e03ac6292e968535e35e19b7db.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/b06760e0abe1355331b0fb6cf4b8f3235d8eb360.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/b5788d360dca1867f1ec15aa87ed4e28afc8d2d4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/ddd809c4b9475eedf39f05916cc12341f1de51d8.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/ef829c96625e59732462215adda7d8cda7f358fa.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/framework/views/f05da647f228950f3c2c122f70e2027a8a503bed.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/Admin/Color/Color.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/Admin/Color/Color.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/Admin/Color/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/Admin/Color/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Backend/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Backend/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/0a7352970d8caab4f9a16de325f4e530a990700d.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/0a7352970d8caab4f9a16de325f4e530a990700d.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/3638bf49aba978cbf4ed2af51ae29ec5f6f786a1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/3638bf49aba978cbf4ed2af51ae29ec5f6f786a1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/6c8a14dc3e1274c574d710119820ae4bb02e3526.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/6c8a14dc3e1274c574d710119820ae4bb02e3526.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,6 +232,7 @@
       <workItem from="1597564149013" duration="26677000" />
       <workItem from="1597662901375" duration="13378000" />
       <workItem from="1597722526256" duration="2670000" />
+      <workItem from="1598113085855" duration="2900000" />
     </task>
     <servers />
   </component>
@@ -255,17 +287,37 @@
       <screen x="62" y="27" width="1304" height="741" />
     </state>
     <state width="1258" height="172" key="GridCell.Tab.0.right/62.27.1304.741@62.27.1304.741" timestamp="1596883675430" />
-    <state x="565" y="136" key="NewPhpClassDialog" timestamp="1597045294707">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="779" y="152" key="NewPhpClassDialog" timestamp="1597947316034">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state x="779" y="152" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1597947316034" />
     <state x="565" y="136" key="NewPhpClassDialog/0.0.1600.860@0.0.1600.860" timestamp="1597045294707" />
+    <state x="517" y="288" key="NewPhpFileDialog" timestamp="1597946545543">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="517" y="288" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1597946545543" />
     <state x="203" y="31" width="1022" height="737" key="SettingsEditor" timestamp="1596883664363">
       <screen x="62" y="27" width="1304" height="741" />
     </state>
     <state x="203" y="31" width="1022" height="737" key="SettingsEditor/62.27.1304.741@62.27.1304.741" timestamp="1596883664363" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1597722881069">
+    <state x="339" y="165" key="run.anything.popup" timestamp="1597944920798">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1597722881069" />
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1597944920798" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1598119205118">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1598119205118" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/Backend/Admin/Color/Color.blade.php</url>
+          <line>81</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

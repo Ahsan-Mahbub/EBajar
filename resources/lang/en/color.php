@@ -1,0 +1,20 @@
+<?php
+return [
+    'brand_name' => 'brand name',
+    'color' => 'color',
+    'add_new' =>'add new',
+    'view_all_data'=>'View all data',
+    'Filter'=>'Filter',
+    'Show'=>'Show',
+    'Status'=>'Status',
+    'Action'=>'Action',
+    'add_color'=>'Add color',
+    'color_name'=>'Color name',
+    'Enter_color_name'=>'Enter color name',
+    'close'=>'close',
+    'save'=>'save',
+    'edit_color'=>'Edit color',
+    'update'=>'Update',
+    'change_language'=>'Change Language',
+    'search'=>'Search',
+];
