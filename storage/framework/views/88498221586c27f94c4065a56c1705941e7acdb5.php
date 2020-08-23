@@ -72,4 +72,4 @@
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section><!-- End Contact Section --><?php /**PATH /home/jubair/Desktop/E-Bajar/EBajar/resources/views/Frontend/pages/contact.blade.php ENDPATH**/ ?>

@@ -10,27 +10,24 @@
     <?php echo $__env->make('Backend.layouts.js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </head>
 
-<body class="full-width page-condensed">
-
-
-<div class="navbar navbar-inverse" role="navigation">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-right">
-            <span class="sr-only">Toggle navbar</span>
-            <i class="icon-grid3"></i>
-        </button>
-
-    </div>
-</div>
+<body class="full-width page-condensed" style="background-image: url(&quot;/ecommerce.jpg&quot;);background-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%; ">
 
 
 <div class="login-wrapper">
         <div class="popup-header" style="margin-top: -60px;">
             <a href="<?php echo e(route('register')); ?>" class="pull-left"><i class="icon-user-plus"></i></a>
             <span class="text-semibold">User Login</span>
-            
+            <div class="btn-group pull-right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cogs"></i></a>
+                <ul class="dropdown-menu icons-right dropdown-menu-right">
+                    <li><a href="<?php echo e(route('register')); ?>"><i class="icon-people"></i> Change user</a></li>
+                    <li><a href="#"><i class="icon-info"></i> Forgot password?</a></li>
+                    <li><a href="#"><i class="icon-support"></i> Contact admin</a></li>
+                    <li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="well">
+        <div class="well" style="background-image: url(&quot;/ecommerce.jpg&quot;); ackground-repeat: no-repeat;background-attachment: fixed; background-size: 100% 100%;">
             <form method="POST" action="<?php echo e(route('login')); ?>">
                 <?php echo csrf_field(); ?>
                 <div class="form-group has-feedback">
@@ -94,13 +91,16 @@ unset($__errorArgs, $__bag); ?>
                     <div class="col-xs-6">
                         <button type="submit" class="btn btn-warning ">Login</button>
                     </div>
-                    <?php if(Route::has('password.request')): ?>
+                    <div>
+                        <?php if(Route::has('password.request')): ?>
                         <a class="btn btn-link" href="<?php echo e(route('password.request')); ?>">
                             <?php echo e(__('Forgot Your Password?')); ?>
 
                         </a>
                     <?php endif; ?>
                     <a class="btn btn-link" href="<?php echo e(url('/register')); ?>">Create an account</a> 
+                    </div>
+                    
                 </div>
             </form>
         </div>

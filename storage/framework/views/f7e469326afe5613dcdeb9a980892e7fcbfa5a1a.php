@@ -65,4 +65,4 @@
         </div>
 
       </div>
-    </section><!-- End Pricing Section -->
+    </section><!-- End Pricing Section --><?php /**PATH /home/jubair/Desktop/E-Bajar/EBajar/resources/views/Frontend/pages/pricing.blade.php ENDPATH**/ ?>

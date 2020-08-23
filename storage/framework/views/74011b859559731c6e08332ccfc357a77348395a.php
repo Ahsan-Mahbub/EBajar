@@ -31,4 +31,4 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section><!-- End About Section --><?php /**PATH /home/jubair/Desktop/E-Bajar/EBajar/resources/views/Frontend/pages/about.blade.php ENDPATH**/ ?>

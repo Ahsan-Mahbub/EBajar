@@ -11,7 +11,7 @@
 
 	<ul class="breadcrumb-buttons collapse">
 		<li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-search3"></i> <span>Search</span> <b class="caret"></b></a>
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-search3"></i> <span><?php echo e(__('color.search')); ?></span> <b class="caret"></b></a>
 			<div class="popup dropdown-menu dropdown-menu-right">
 				<div class="popup-header">
 					<a href="#" class="pull-left"><i class="icon-paragraph-justify"></i></a>
@@ -50,13 +50,10 @@
 		</li>
 
 		<li class="language dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/flags/german.png" alt=""> <span>German</span> <b class="caret"></b></a>
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/flags/german.png" alt=""> <span><?php echo e(__('color.change_language')); ?></span> <b class="caret"></b></a>
 			<ul class="dropdown-menu dropdown-menu-right icons-right">
-				<li><a href="#"><img src="images/flags/ukrainian.png" alt=""> Ukrainian</a></li>
-				<li class="active"><a href="#"><img src="images/flags/english.png" alt=""> English</a></li>
-				<li><a href="#"><img src="images/flags/spanish.png" alt=""> Spanish</a></li>
-				<li><a href="#"><img src="images/flags/german.png" alt=""> German</a></li>
-				<li><a href="#"><img src="images/flags/hungarian.png" alt=""> Hungarian</a></li>
+				<li class="<?php echo e((request()->is('admin/locale/en')) ? 'active' : ''); ?>"><a href="locale/en"><img src="images/flags/english.png" alt=""> English</a></li>
+				<li class="<?php echo e((request()->is('admin/locale/bn')) ? 'active' : ''); ?>"><a href="locale/bn"><img src="images/flags/bangladesh.png" alt="">Bangla</a></li>
 			</ul>
 		</li>
 	</ul>
