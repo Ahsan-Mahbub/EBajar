@@ -7,8 +7,13 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use File;
 use DB;
+use Toastr;
+use App\Traits\FileVerifyUpload;
+
 class ProfileController extends Controller
 {
+    use FileVerifyUpload;
+
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +33,19 @@ class ProfileController extends Controller
     {
         
     }
-    
+
+    public function password(Request $request)
+    {
+        $match=hash::check($request->current_password,Auth::user()->password);
+        if ($match) 
+        {
+            echo "Matched";
+        }
+        else
+        {
+            echo "error";
+        }
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -38,6 +55,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'name'   => 'required',
             'gender' => 'required',

@@ -16,13 +16,13 @@
 
 <main id="main">
 
-  @include('Frontend.pages.about')
   @include('Frontend.pages.services')
   @include('Frontend.pages.features')
   @include('Frontend.pages.portfolio')
-  @include('Frontend.pages.pricing')
+  @include('Frontend.pages.portfolio1')
+  @include('Frontend.pages.portfolio2')
+  @include('Frontend.pages.portfolio3')
   @include('Frontend.pages.team')
-  @include('Frontend.pages.contact')
  
 </main><!-- End #main -->
   @include('Frontend.Layouts.footer')

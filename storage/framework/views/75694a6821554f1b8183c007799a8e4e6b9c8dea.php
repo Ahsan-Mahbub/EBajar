@@ -13,6 +13,8 @@
   <link href="frontend_assets/assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="frontend_assets/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
+
   <!-- Template Main CSS File -->
   <link href="frontend_assets/assets/css/style.css" rel="stylesheet">
 

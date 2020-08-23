@@ -69,8 +69,5 @@ Route::prefix('admin')->group(function(){
         Route::resource('/password', 'PasswordController');
         Route::post('password/store', 'PasswordController@store');
         Route::get('pass', 'PasswordController@password')->name('password');
-
-
-
     });
 });

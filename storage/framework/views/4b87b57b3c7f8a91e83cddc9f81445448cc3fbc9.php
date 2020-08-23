@@ -26,6 +26,7 @@
                 </div>
 
                 <div class="form-group">
+<<<<<<< HEAD
                     <label class="col-sm-2 control-label">Sub Category:</label>
                     <div class="col-sm-10">
                         <select class="select-full" name="sub_category_name" id="sub_category_name">
@@ -34,6 +35,16 @@
                             <?php if($errors->first('sub_category_name')): ?>
                                 <label for="sub_category_name" class="error"><?php echo e($errors->first('sub_category_name')); ?></label>
                             <?php endif; ?>
+=======
+                    <label class="col-sm-2 control-label">sub Category:</label>
+                    <div class="col-sm-10">
+                        <select class="select-full" name="sub_category_name" id="sub_category_name">
+                            <option value="" selected>Select One</option>
+                        </select>
+                        <?php if($errors->first('sub_category_name')): ?>
+                            <label for="sub_category_name" class="error"><?php echo e($errors->first('sub_category_name')); ?></label>
+                        <?php endif; ?>
+>>>>>>> dc917fb83d08a635919d46e4ad51ac964814a4b1
                     </div>
                 </div>
 

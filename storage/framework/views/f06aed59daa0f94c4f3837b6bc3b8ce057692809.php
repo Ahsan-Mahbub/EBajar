@@ -4,9 +4,9 @@
 
 <form id="password_form">
     <div class="modal-dialog">
-    	<br><br><br><br><div><h4 style="text-align: center; font-family: cursive;">Password Updated</h4></div>
+        <br><br><br><br><div><h4 style="text-align: center; font-family: cursive;">Password Updated</h4></div>
             <div class="modal-body">
-            	
+                
                 <div class="panel-body">
                     <div class="form-group">
                         <label class="col-lg-3 control-label">Password</label>

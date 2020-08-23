@@ -15,45 +15,6 @@
                     <div class="modal-body">
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Division</label>
-                                <div class="col-lg-9">
-                                    <select name="" class="form-control">
-                                        <option selected disabled hidden>Choose one</option>
-                                    @foreach($division as $key=>$division_data)
-                                    <option value="{{$key}}">{{$division_data['name']}}</option>
-                                    @endforeach
-                                    
-                                    </select>
-                                    <span class="text-danger" id=""></span>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">District</label>
-                                <div class="col-lg-9">
-                                    <select name="" class="form-control">
-                                        <option selected disabled hidden>Choose one</option>
-                                    
-                                    </select>
-                                    <span class="text-danger" id=""></span>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Sub District</label>
-                                <div class="col-lg-9">
-                                    <select name="" class="form-control">
-                                        <option selected disabled hidden>Choose one</option>
-                                    
-                                    </select>
-                                    <span class="text-danger" id=""></span>
-                                </div>
-                            </div>
-                            <br><br>
-
-<h4>main part</h4>
-
-                            <div class="form-group">
                                 <label class="col-lg-3 control-label">Sub Category Name:</label>
                                 <div class="col-lg-9">
                                     <select name="sub_category_name" class="form-control">
