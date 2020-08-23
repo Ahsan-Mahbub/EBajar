@@ -87,6 +87,7 @@ class ComposerStaticInit389016f32185caf3cae2c3dd8822f51f
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'ShakilAhmmed\\Path\\' => 18,
         ),
         'R' => 
         array (
@@ -309,6 +310,10 @@ class ComposerStaticInit389016f32185caf3cae2c3dd8822f51f
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'ShakilAhmmed\\Path\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/shakil-ahmmed/path/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -506,7 +511,6 @@ class ComposerStaticInit389016f32185caf3cae2c3dd8822f51f
         'App\\Color' => __DIR__ . '/../..' . '/app/Color.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\District' => __DIR__ . '/../..' . '/app/District.php',
-        'App\\Districtxyz' => __DIR__ . '/../..' . '/app/Districtxyz.php',
         'App\\Division' => __DIR__ . '/../..' . '/app/Division.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
@@ -517,9 +521,11 @@ class ComposerStaticInit389016f32185caf3cae2c3dd8822f51f
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\BrandController' => __DIR__ . '/../..' . '/app/Http/Controllers/BrandController.php',
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
+        'App\\Http\\Controllers\\ColorController' => __DIR__ . '/../..' . '/app/Http/Controllers/ColorController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DistrictController' => __DIR__ . '/../..' . '/app/Http/Controllers/DistrictController.php',
         'App\\Http\\Controllers\\DivisionController' => __DIR__ . '/../..' . '/app/Http/Controllers/DivisionController.php',
+        'App\\Http\\Controllers\\FrontEndController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontEndController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/PasswordController.php',
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
@@ -537,7 +543,9 @@ class ComposerStaticInit389016f32185caf3cae2c3dd8822f51f
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\ColorRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ColorRequest.php',
         'App\\Http\\Requests\\ProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProductRequest.php',
+        'App\\Http\\Requests\\ProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileRequest.php',
         'App\\Http\\Requests\\SliderRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SliderRequest.php',
         'App\\Http\\Requests\\SubCategoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SubCategoryRequest.php',
         'App\\Http\\Resources\\ProductCollection' => __DIR__ . '/../..' . '/app/Http/Resources/ProductCollection.php',
@@ -4273,6 +4281,7 @@ class ComposerStaticInit389016f32185caf3cae2c3dd8822f51f
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
+        'ShakilAhmmed\\Path\\Path' => __DIR__ . '/..' . '/shakil-ahmmed/path/src/Path.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',

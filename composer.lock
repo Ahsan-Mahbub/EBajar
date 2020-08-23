@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4af2c0988de33886777dc666c57dc670",
+    "content-hash": "f174809bbb492aa223d2e8dcab720d88",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1197,15 +1197,6 @@
                 "sftp",
                 "storage"
             ],
-<<<<<<< HEAD
-            "funding": [
-                {
-                    "url": "https://offset.earth/frankdejonge",
-                    "type": "other"
-                }
-            ],
-=======
->>>>>>> a67a023730afb954ec298a3e8c4fea028285822f
             "time": "2020-08-12T14:23:41+00:00"
         },
         {
@@ -2035,15 +2026,12 @@
                 "queue",
                 "set"
             ],
-<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://github.com/ramsey",
                     "type": "github"
                 }
             ],
-=======
->>>>>>> a67a023730afb954ec298a3e8c4fea028285822f
             "time": "2020-08-11T00:57:21+00:00"
         },
         {
@@ -2126,6 +2114,39 @@
                 "uuid"
             ],
             "time": "2020-07-28T16:51:01+00:00"
+        },
+        {
+            "name": "shakil-ahmmed/path",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ShakilAhmmed/path.git",
+                "reference": "385d0d13ca0bf2ac27e417ba232b63e048582541"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ShakilAhmmed/path/zipball/385d0d13ca0bf2ac27e417ba232b63e048582541",
+                "reference": "385d0d13ca0bf2ac27e417ba232b63e048582541",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ShakilAhmmed\\Path\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ShakilAhmmed",
+                    "email": "shakilfci461@gmail.com"
+                }
+            ],
+            "description": "Package For Getting Division, District and SubDistrict Name(Bangladesh)",
+            "time": "2020-07-31T02:21:25+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6119,5 +6140,6 @@
     "platform": {
         "php": "^7.2.5"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }

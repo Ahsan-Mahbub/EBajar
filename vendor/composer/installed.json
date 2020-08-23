@@ -4155,6 +4155,41 @@
         "homepage": "https://github.com/sebastianbergmann/version"
     },
     {
+        "name": "shakil-ahmmed/path",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ShakilAhmmed/path.git",
+            "reference": "385d0d13ca0bf2ac27e417ba232b63e048582541"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ShakilAhmmed/path/zipball/385d0d13ca0bf2ac27e417ba232b63e048582541",
+            "reference": "385d0d13ca0bf2ac27e417ba232b63e048582541",
+            "shasum": ""
+        },
+        "time": "2020-07-31T02:21:25+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "ShakilAhmmed\\Path\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "ShakilAhmmed",
+                "email": "shakilfci461@gmail.com"
+            }
+        ],
+        "description": "Package For Getting Division, District and SubDistrict Name(Bangladesh)"
+    },
+    {
         "name": "swiftmailer/swiftmailer",
         "version": "v6.2.3",
         "version_normalized": "6.2.3.0",
